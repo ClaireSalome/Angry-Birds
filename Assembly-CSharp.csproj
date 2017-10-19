@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E664FD66-7241-7A36-2258-61F3C4E7918E}</ProjectGuid>
+    <ProjectGuid>{33C8B8AC-AA61-1D75-74AF-0F1D6BFF1F95}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,13 +56,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="FYFY">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Proto/Assets/Libraries/FYFY.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY.dll</HintPath>
  </Reference>
  <Reference Include="FYFY_Inspector">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Proto/Assets/Libraries/FYFY_Inspector.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY_Inspector.dll</HintPath>
  </Reference>
  <Reference Include="TriggerManager">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Proto/Assets/Libraries/TriggerManager.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/TriggerManager.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
