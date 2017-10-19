@@ -6,8 +6,6 @@ public class MoveProjectile : FSystem {
 	// _projectile = famille des entités ayant le composant Move
 	private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
 
-	// line going from the origin to some direction
-	private Ray2D projectileToDirection;
 
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
@@ -31,20 +29,17 @@ public class MoveProjectile : FSystem {
 			Vector3 pos_init = tr.position;
 			Vector3 mousePoint = Vector3.zero;
 
-			if(Input.GetMouseButtonDown(1).Equals(true) ){
+			if(Input.GetMouseButtonDown(0).Equals(true) ){
 				mousePoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 				mousePoint.z = 0f;
 				tr.position = mousePoint ;
 			}
 
 			// quand on relache le bouton droit de la souris
-			if (Input.GetMouseButtonUp(1).Equals(true) ){
+			if (Input.GetMouseButtonUp(0).Equals(true) ){
 				// normalement
 				// devrait créer la bonne direction
-				projectileToDirection = new Ray2D (mousePoint,  pos_init - mousePoint);
-
-				rb.velocity = new Vector2 (mo.vitesse_init, mo.vitesse_init);
-
+				rb.velocity= new Vector2 (mo.vitesse_init * Mathf.Cos (mo.angle*Mathf.PI/180) , mo.vitesse_init * Mathf.Sin (mo.angle*Mathf.PI/180));
 				// le projectile est de nouveau soumis aux forces physiques
 				rb.isKinematic = false;
 
