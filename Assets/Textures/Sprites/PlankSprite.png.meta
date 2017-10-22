@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 418ab5c27d3054eb89959d9c715e00c9
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PlankSprite_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,14 +45,11 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: PlankSprite_0
+    - name: PlankSprite_0
       rect:
         serializedVersion: 2
         x: 47
@@ -61,8 +59,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
+      outline:
+      - - {x: -83, y: 20}
+        - {x: -83, y: -20}
+        - {x: 83, y: -20}
+        - {x: 83, y: 20}
     outline: []
   spritePackingTag: 
   userData: 

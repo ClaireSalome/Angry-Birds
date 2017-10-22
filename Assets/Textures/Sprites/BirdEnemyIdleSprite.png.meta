@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: ff84aacc54bb8d843be32e8d39412a39
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: EnemyIdleSprite_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,14 +45,11 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: EnemyIdleSprite_0
+    - name: EnemyIdleSprite_0
       rect:
         serializedVersion: 2
         x: 7
@@ -61,8 +59,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: -1
+      outline:
+      - - {x: -33.5, y: 33.5}
+        - {x: -56.5, y: 6.5}
+        - {x: -56.5, y: -25.5}
+        - {x: -28.5, y: -33.5}
+        - {x: 56.5, y: -33.5}
+        - {x: 56.5, y: 32.5}
+        - {x: 55.5, y: 33.5}
     outline: []
   spritePackingTag: 
   userData: 
