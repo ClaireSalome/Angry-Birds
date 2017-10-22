@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: fb16cc86978e6464d9ecc8802812674a
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Bullet_0
-    21300002: Bullet_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,6 +44,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings:
   - buildTarget: iPhone
@@ -54,8 +53,10 @@ TextureImporter:
     compressionQuality: 50
     allowsAlphaSplitting: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Bullet_0
+    - serializedVersion: 2
+      name: Bullet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -66,7 +67,9 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Bullet_1
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Bullet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -77,6 +80,7 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
