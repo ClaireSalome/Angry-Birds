@@ -31,15 +31,30 @@ public class TrajectoireSystem : FSystem {
 
 			float dt = Time.deltaTime;
 
-			go.transform.position += mo.vitesse*dt + ((mo.earth_gravity/rb.mass)* Mathf.Pow(dt,2))/2f;
+			if (mo.inMovement == true) {
 
-            //TODO: mettre a jour la vitesse??
-            mo.vitesse += 0.5f * (2 * mo.earth_gravity / rb.mass) * dt; 
+//				go.transform.position += mo.vitesse * dt + ((mo.earth_gravity / dp.masse) * Mathf.Pow (dt, 2)) / 2f;
+//
+//				mo.vitesse += 0.5f * (2 * mo.earth_gravity / dp.masse) * dt; 
+
+				//equations du cours
+				float delta_x =  (mo.vitesse.x * dt);
+				float delta_y = (mo.vitesse.y * dt) + (dp.masse*mo.earth_gravity.y/2f) * Mathf.Pow (dt, 2)  ;
+
+				mo.vitesse.y += dp.masse*mo.earth_gravity.y * dt;
+
+				go.transform.position += new Vector3 (delta_x, delta_y, 0f);
+
+			}
+
 //			Vector2 movement = new Vector2 (Mathf.Cos (mo.angle*Mathf.PI/180), Mathf.Sin (mo.angle*Mathf.PI/180));
 //			dp.set_calculated_velocity(movement * mo.vitesse);
 
-
-
+			//TODO
+			/* quand le projectile touche le sol
+			 * ne plus lui appliquer la gravité ?
+			 * rajouter des frottements
+			 */
 		}
 
 	}
