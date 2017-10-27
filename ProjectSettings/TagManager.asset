@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Vx_Text
+  - Vx_Slider
+  - Shoot
+  - Vy_Text
+  - Vy_Slider
   layers:
   - Default
   - TransparentFX

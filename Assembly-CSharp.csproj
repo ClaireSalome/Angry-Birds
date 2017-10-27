@@ -47,8 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Components\DataProjectile.cs" />
      <Compile Include="Assets\Components\Move.cs" />
-     <Compile Include="Assets\Systems\MoveProSystem.cs" />
      <Compile Include="Assets\Systems\TrajectoireSystem.cs" />
+     <Compile Include="Assets\Systems\UISystem.cs" />
      <None Include="Assets\Libraries\FYFY.xml" />
      <None Include="Assets\Libraries\TriggerManager.xml" />
  <Reference Include="UnityEngine.UI">
@@ -58,13 +58,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="FYFY">
- <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/FYFY.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY.dll</HintPath>
  </Reference>
  <Reference Include="FYFY_Inspector">
- <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/FYFY_Inspector.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY_Inspector.dll</HintPath>
  </Reference>
  <Reference Include="TriggerManager">
- <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/TriggerManager.dll</HintPath>
+ <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/TriggerManager.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
