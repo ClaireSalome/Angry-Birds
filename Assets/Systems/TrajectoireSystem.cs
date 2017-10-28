@@ -27,6 +27,12 @@ public class TrajectoireSystem : FSystem {
 //
 //				mo.vitesse += 0.5f * (2 * mo.earth_gravity / dp.masse) * dt; 
 
+				//si le projectile sort du champ de la caméra
+				if (go.transform.position.x > 3f * Camera.main.orthographicSize) {
+					mo.inMovement = false;
+					mo.new_projectile = true;
+				}
+
 				//equations du cours
 				float delta_x =  (mo.vitesse.x * dt);
 				float delta_y = 0f;
@@ -49,7 +55,7 @@ public class TrajectoireSystem : FSystem {
 						mo.new_projectile = true;
 					}
 				}
-
+					
 				go.transform.position += new Vector3 (delta_x, delta_y, 0f);
 
 			}
