@@ -48,6 +48,7 @@
      <Compile Include="Assets\Components\DataProjectile.cs" />
      <Compile Include="Assets\Components\Move.cs" />
      <Compile Include="Assets\Systems\CollisionSystem.cs" />
+     <Compile Include="Assets\Systems\ProjectileFactorySystem.cs" />
      <Compile Include="Assets\Systems\TrajectoireSystem.cs" />
      <Compile Include="Assets\Systems\UISystem.cs" />
      <None Include="Assets\Libraries\FYFY.xml" />

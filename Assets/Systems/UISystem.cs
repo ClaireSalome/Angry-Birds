@@ -45,6 +45,7 @@ public class UISystem : FSystem {
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.x = vx_slider.value;
+			mv.vitesse_init.x = vx_slider.value;
 		}
 	}
 
@@ -53,6 +54,7 @@ public class UISystem : FSystem {
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.y = vy_slider.value;
+			mv.vitesse_init.y = vy_slider.value;
 		}
 	}
 

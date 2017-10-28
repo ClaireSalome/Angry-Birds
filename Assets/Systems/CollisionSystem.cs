@@ -15,7 +15,8 @@ public class CollisionSystem : FSystem {
 
 			foreach (GameObject target in tr.Targets) {
 				// ground collision
-				if (target.tag.Equals ("Ground")) {
+				//quand le projectile ne bouge plus -> nouveau projectile créé donc ne plus toucher à la vitesse
+				if (target.tag.Equals ("Ground") && mo.inMovement == true) {
 					mo.groundContact = true;
 					mo.vitesse.y =0f;
 				}

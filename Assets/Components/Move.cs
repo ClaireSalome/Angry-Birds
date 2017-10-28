@@ -6,6 +6,12 @@ public class Move : MonoBehaviour {
 	// gravite
 	public Vector3 earth_gravity = new Vector3 (0,-9.81f,0);
 
+	//position initiale
+	public Vector3 init_position = new Vector3(-9f, -2.8f,0);
+
+	//vitesse entrée par l'utilisateur
+	public Vector3 vitesse_init = new Vector3 (3f, 5f, 0f);
+
 	// vecteur vitesse
 	public Vector3 vitesse = new Vector3(3f, 5f, 0);
 
@@ -14,6 +20,9 @@ public class Move : MonoBehaviour {
 
 	//pour les frottements du sol
 	public bool groundContact = false ;
+
+	//pour un nouveau tir
+	public bool new_projectile = false ;
 
 	/*
 	 * angle de la trajectoire

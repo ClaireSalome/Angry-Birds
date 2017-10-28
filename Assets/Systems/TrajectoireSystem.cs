@@ -9,16 +9,6 @@ public class TrajectoireSystem : FSystem {
 	// _projectile = famille des entités ayant le composant Move
 	private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
 
-	// Use this to update member variables when system pause. 
-	// Advice: avoid to update your families inside this function.
-	protected override void onPause(int currentFrame) {
-	}
-
-	// Use this to update member variables when system resume.
-	// Advice: avoid to update your families inside this function.
-	protected override void onResume(int currentFrame){
-	}
-		
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
@@ -56,6 +46,7 @@ public class TrajectoireSystem : FSystem {
 					// si la vitesse est nulle, le projectile ne bouge plus
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
 						mo.inMovement = false;
+						mo.new_projectile = true;
 					}
 				}
 
