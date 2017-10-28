@@ -9,6 +9,7 @@ TagManager:
   - Shoot
   - Vy_Text
   - Vy_Slider
+  - Ground
   layers:
   - Default
   - TransparentFX

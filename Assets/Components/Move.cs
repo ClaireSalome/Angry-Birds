@@ -12,6 +12,9 @@ public class Move : MonoBehaviour {
 	//pour le declenchement du tir
 	public bool inMovement = false ;
 
+	//pour les frottements du sol
+	public bool groundContact = false ;
+
 	/*
 	 * angle de la trajectoire
 	 */
