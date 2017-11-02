@@ -21,6 +21,9 @@ public class UISystem : FSystem {
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 
+	// arrow sprite
+	GameObject direction_vector = GameObject.FindGameObjectWithTag("arrow");
+
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
@@ -32,7 +35,6 @@ public class UISystem : FSystem {
 			vy_slider.onValueChanged.AddListener (delegate {
 				updateVyValue();
 			});
-
 			addEvent = false;
 		}
 	}
@@ -47,6 +49,7 @@ public class UISystem : FSystem {
 			mv.vitesse.x = vx_slider.value;
 			mv.vitesse_init.x = vx_slider.value;
 		}
+		updateArrow ();
 	}
 
 	public void updateVyValue() {
@@ -56,6 +59,7 @@ public class UISystem : FSystem {
 			mv.vitesse.y = vy_slider.value;
 			mv.vitesse_init.y = vy_slider.value;
 		}
+		updateArrow ();	
 	}
 
 
@@ -68,4 +72,16 @@ public class UISystem : FSystem {
 		}
 
 	}
+
+	public void updateArrow() {
+		//angle
+		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vx_slider.value/Mathf.Sqrt(Mathf.Pow(vx_slider.value,2)+Mathf.Pow(vy_slider.value,2)))*Mathf.Rad2Deg));
+		//puissance
+		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vx_slider.value, 2) + Mathf.Pow (vy_slider.value, 2)) / 2,direction_vector.transform.localScale.y,0f);
+	}
+
+	//			Vector2 movement = new Vector2 (Mathf.Cos (mo.angle*Mathf.PI/180), Mathf.Sin (mo.angle*Mathf.PI/180));
+	//			dp.set_calculated_velocity(movement * mo.vitesse);
+
+	// angle = cos-1(x)
 }

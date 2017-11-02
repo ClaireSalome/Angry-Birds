@@ -10,6 +10,8 @@ TagManager:
   - Vy_Text
   - Vy_Slider
   - Ground
+  - arrow
+  - wood_struct
   layers:
   - Default
   - TransparentFX

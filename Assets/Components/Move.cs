@@ -10,10 +10,10 @@ public class Move : MonoBehaviour {
 	public Vector3 init_position = new Vector3(-9f, -2.8f,0);
 
 	//vitesse entrée par l'utilisateur
-	public Vector3 vitesse_init = new Vector3 (3f, 5f, 0f);
+	public Vector3 vitesse_init = new Vector3 (2.5f, 4.5f, 0f);
 
 	// vecteur vitesse
-	public Vector3 vitesse = new Vector3(3f, 5f, 0);
+	public Vector3 vitesse = new Vector3(2.5f, 4.5f, 0);
 
 	//pour le declenchement du tir
 	public bool inMovement = false ;

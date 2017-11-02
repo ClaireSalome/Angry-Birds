@@ -20,6 +20,10 @@ public class CollisionSystem : FSystem {
 					mo.groundContact = true;
 					mo.vitesse.y =0f;
 				}
+
+				if (target.tag.Equals ("wood_struct")) {
+					mo.vitesse.x = 0f;
+				}
 			}
 		}
 	}

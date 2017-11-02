@@ -63,6 +63,8 @@ public class TrajectoireSystem : FSystem {
 //			Vector2 movement = new Vector2 (Mathf.Cos (mo.angle*Mathf.PI/180), Mathf.Sin (mo.angle*Mathf.PI/180));
 //			dp.set_calculated_velocity(movement * mo.vitesse);
 
+			// angle = cos-1(x)
+
 		}
 
 	}
