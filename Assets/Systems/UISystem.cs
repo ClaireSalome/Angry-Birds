@@ -43,7 +43,7 @@ public class UISystem : FSystem {
 	//update the slider value displayed at screen 
 	//update speed value
 	public void updateVxValue() {
-		vx_text.text = "Vx = "+vx_slider.value.ToString();
+		vx_text.text = "Vx = "+vx_slider.value.ToString("F1");
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.x = vx_slider.value;
@@ -53,7 +53,7 @@ public class UISystem : FSystem {
 	}
 
 	public void updateVyValue() {
-		vy_text.text = "Vy = "+vy_slider.value.ToString();
+		vy_text.text = "Vy = "+vy_slider.value.ToString("F1");
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.y = vy_slider.value;

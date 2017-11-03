@@ -7,7 +7,7 @@ public class Move : MonoBehaviour {
 	public Vector3 earth_gravity = new Vector3 (0,-9.81f,0);
 
 	//position initiale
-	public Vector3 init_position = new Vector3(-9f, -2.8f,0);
+	public Vector3 init_position = new Vector3(-8f, -2.8f,0);
 
 	//vitesse entrée par l'utilisateur
 	public Vector3 vitesse_init = new Vector3 (2.5f, 4.5f, 0f);
@@ -24,9 +24,5 @@ public class Move : MonoBehaviour {
 	//pour un nouveau tir
 	public bool new_projectile = false ;
 
-	/*
-	 * angle de la trajectoire
-	 */
-//	public int angle = 30;
 
 }
