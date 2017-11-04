@@ -12,6 +12,9 @@ TagManager:
   - Ground
   - arrow
   - wood_struct
+  - reward
+  - score
+  - total
   layers:
   - Default
   - TransparentFX

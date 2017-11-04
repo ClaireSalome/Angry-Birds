@@ -4,7 +4,11 @@ using FYFY_plugins.TriggerManager ;
 
 public class CollisionSystem : FSystem {
 
+
 	private Family _triggered2D = FamilyManager.getFamily(new AllOfComponents(typeof(Triggered2D))) ;
+
+	//récupérer le score total pour les récompenses
+	private TotalScore total = GameObject.FindGameObjectWithTag("total").GetComponent<TotalScore>() ;
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
@@ -23,6 +27,13 @@ public class CollisionSystem : FSystem {
 
 				if (target.tag.Equals ("wood_struct")) {
 					mo.vitesse.x = 0f;
+				}
+
+				if (target.tag.Equals ("reward")) {
+					Collect co = target.GetComponent<Collect> ();
+					total.score_total += co.reward;
+					GameObjectManager.unbind (target);
+					GameObject.Destroy (target);
 				}
 			}
 		}

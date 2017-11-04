@@ -20,12 +20,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013533279170}
   - 212: {fileID: 212000010682115698}
-  - 50: {fileID: 50000014207885582}
   - 60: {fileID: 60000012791332146}
   - 114: {fileID: 114000012313106124}
   m_Layer: 0
   m_Name: apple
-  m_TagString: Untagged
+  m_TagString: reward
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,23 +42,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &50000014207885582
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011235904896}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &60000012791332146
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -69,7 +51,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:

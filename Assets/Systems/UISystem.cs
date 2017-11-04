@@ -13,6 +13,7 @@ public class UISystem : FSystem {
 	//get texts
 	Text vx_text = GameObject.FindGameObjectWithTag("Vx_Text").GetComponent<Text> ();
 	Text vy_text = GameObject.FindGameObjectWithTag("Vy_Text").GetComponent<Text> ();
+	Text score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
 
 	//get sliders
 	Slider vx_slider = GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() ;
@@ -28,6 +29,7 @@ public class UISystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		if (addEvent == true) {
+			//ajout des evenements a ne faire qu'une fois
 			shoot.onClick.AddListener (triggerShoot);
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
@@ -37,6 +39,7 @@ public class UISystem : FSystem {
 			});
 			addEvent = false;
 		}
+		updateScore ();
 	}
 
 
@@ -80,8 +83,9 @@ public class UISystem : FSystem {
 		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vx_slider.value, 2) + Mathf.Pow (vy_slider.value, 2)) / 2,direction_vector.transform.localScale.y,0f);
 	}
 
-	//			Vector2 movement = new Vector2 (Mathf.Cos (mo.angle*Mathf.PI/180), Mathf.Sin (mo.angle*Mathf.PI/180));
-	//			dp.set_calculated_velocity(movement * mo.vitesse);
 
-	// angle = cos-1(x)
+	public void updateScore() {
+		TotalScore ts = GameObject.FindGameObjectWithTag ("total").GetComponent<TotalScore> ();
+		score.text = "Bonus : + "+ts.score_total;
+	}
 }
