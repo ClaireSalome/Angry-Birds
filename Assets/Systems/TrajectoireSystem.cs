@@ -45,9 +45,9 @@ public class TrajectoireSystem : FSystem {
 					mo.vitesse.y += dp.masse * mo.earth_gravity.y * dt;
 				} 
 				else {
-					//le projectile a touché le sol -> force de frottement
-					delta_x += mu * (dp.masse * mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
+                    //le projectile a touché le sol -> force de frottement
+                    delta_x += mu * (dp.masse * mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
+                    mo.vitesse.x += mu * mo.earth_gravity.y * dt;
 
 					// si la vitesse est nulle, le projectile ne bouge plus
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {

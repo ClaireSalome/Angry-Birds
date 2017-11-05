@@ -15,6 +15,9 @@ TagManager:
   - reward
   - score
   - total
+  - start
+  - rules
+  - about
   layers:
   - Default
   - TransparentFX
