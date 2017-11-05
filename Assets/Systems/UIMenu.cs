@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using FYFY;
 using UnityEngine.UI;
 
@@ -29,6 +28,6 @@ public class UIMenu : FSystem {
 
     public void startGame()
     {
-        GameObjectManager.loadScene("scene 1");
+        GameObjectManager.loadScene("niveau0");
     }
 }

@@ -23,7 +23,7 @@ GameObject:
   - 61: {fileID: 61000012242817192}
   - 50: {fileID: 50000013810691024}
   m_Layer: 0
-  m_Name: elementWood
+  m_Name: woodPlank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012570816542}
   m_UseAutoMass: 1
-  m_Mass: 10
+  m_Mass: 15
   m_LinearDrag: 0.5
   m_AngularDrag: 0.5
   m_GravityScale: 1
