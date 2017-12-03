@@ -24,7 +24,7 @@ GameObject:
   - 50: {fileID: 50000013810691024}
   m_Layer: 0
   m_Name: woodPlank
-  m_TagString: Untagged
+  m_TagString: wood_struct
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
