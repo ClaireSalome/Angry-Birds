@@ -764,9 +764,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.000000025915062, y: -6.09886}
+  m_Offset: {x: -0.000000025915062, y: -6.106392}
   serializedVersion: 2
-  m_Size: {x: 20.48, y: 3.262282}
+  m_Size: {x: 20.48, y: 3.2472167}
 --- !u!50 &562608765
 Rigidbody2D:
   serializedVersion: 2
@@ -877,7 +877,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 90
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   - _typeAssemblyQualifiedName: TrajectoireSystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: TrajectoireSystem
-    _pause: 1
+    _pause: 0
   - _typeAssemblyQualifiedName: ProjectileFactorySystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: ProjectileFactorySystem
@@ -2282,7 +2282,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012096828654, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.13
+      value: 6.073
       objectReference: {fileID: 0}
     - target: {fileID: 4000012096828654, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2341,6 +2341,21 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
@@ -3898,7 +3913,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 50
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
