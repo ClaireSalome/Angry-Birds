@@ -31,6 +31,7 @@ public class UISystem : FSystem {
 		if (addEvent == true) {
 			//ajout des evenements a ne faire qu'une fois
 			shoot.onClick.AddListener (triggerShoot);
+
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
 			});
@@ -39,6 +40,17 @@ public class UISystem : FSystem {
 			});
 			addEvent = false;
 		}
+		foreach (GameObject go in _projectile) {
+			Move mv = go.GetComponent<Move> ();
+			if (mv.inMovement) {
+				vx_slider.enabled = false;
+				vy_slider.enabled = false;
+			} else {
+				vx_slider.enabled = true;
+				vy_slider.enabled = true;
+			}
+		}
+			
 		updateScore ();
 	}
 

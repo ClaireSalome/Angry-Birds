@@ -381,7 +381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalPosition.z
@@ -397,11 +397,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.008726558
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999962
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_RootOrder
@@ -415,11 +415,11 @@ Prefab:
     - target: {fileID: 212000012022915648, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000010735168808, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -469,6 +469,21 @@ Prefab:
       propertyPath: init_position.x
       value: -8
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: init_position.y
+      value: -2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000010611973796, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000010611973796, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
   m_IsPrefabParent: 0
@@ -509,7 +524,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013533279170, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000011235904896, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_Name
@@ -530,6 +545,11 @@ Prefab:
     - target: {fileID: 60000012791332146, guid: 7a5069df61bac9f4290db3aa963740f8,
         type: 2}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000010914781334, guid: 7a5069df61bac9f4290db3aa963740f8,
+        type: 2}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -678,9 +698,11 @@ GameObject:
   - 4: {fileID: 562608761}
   - 212: {fileID: 562608762}
   - 68: {fileID: 562608763}
+  - 61: {fileID: 562608764}
+  - 50: {fileID: 562608765}
   m_Layer: 0
   m_Name: _ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,6 +768,37 @@ EdgeCollider2D:
   m_Points:
   - {x: -10.351941, y: -4.493905}
   - {x: 10.287749, y: -4.442609}
+--- !u!61 &562608764
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 562608760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.000000025915062, y: -6.106392}
+  serializedVersion: 2
+  m_Size: {x: 20.48, y: 3.2472167}
+--- !u!50 &562608765
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 562608760}
+  m_UseAutoMass: 0
+  m_Mass: 76.833244
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &617541453
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +892,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 90
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1473,11 +1526,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013533279170, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000011235904896, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_Name
       value: apple (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 60000012791332146, guid: 7a5069df61bac9f4290db3aa963740f8,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000010914781334, guid: 7a5069df61bac9f4290db3aa963740f8,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
@@ -1520,13 +1583,13 @@ MonoBehaviour:
     _typeFullName: CollisionSystem
     _pause: 0
   _updateSystemDescriptions:
-  - _typeAssemblyQualifiedName: TrajectoireSystem, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    _typeFullName: TrajectoireSystem
-    _pause: 0
   - _typeAssemblyQualifiedName: UISystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     _typeFullName: UISystem
+    _pause: 0
+  - _typeAssemblyQualifiedName: TrajectoireSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: TrajectoireSystem
     _pause: 0
   - _typeAssemblyQualifiedName: ProjectileFactorySystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2244,7 +2307,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012096828654, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.13
+      value: 6.073
       objectReference: {fileID: 0}
     - target: {fileID: 4000012096828654, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2304,6 +2367,21 @@ Prefab:
       propertyPath: m_Mass
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000011877833040, guid: 3bb88944b7ec21e479f404c84943e155,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bb88944b7ec21e479f404c84943e155, type: 2}
   m_IsPrefabParent: 0
@@ -2316,6 +2394,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1642994761}
   - 212: {fileID: 1642994762}
+  - 68: {fileID: 1642994763}
   m_Layer: 0
   m_Name: _01_distant_trees
   m_TagString: Untagged
@@ -2369,6 +2448,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!68 &1642994763
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642994760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: 10.244336, y: -1.8877281}
+  - {x: 10.233345, y: -4.2671857}
 --- !u!1 &1692845487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2554,7 @@ GameObject:
   - 114: {fileID: 1714175266}
   - 114: {fileID: 1714175265}
   - 114: {fileID: 1714175264}
+  - 114: {fileID: 1714175271}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -2505,7 +2600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earth_gravity: {x: 0, y: -9.81, z: 0}
-  init_position: {x: -8, y: -2.8, z: 0}
+  init_position: {x: -8, y: -2.7, z: 0}
   vitesse_init: {x: 2.5, y: 4.5, z: 0}
   vitesse: {x: 2.5, y: 4.5, z: 0}
   inMovement: 0
@@ -2573,7 +2668,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bc15c6ea9b0124465b164fd3e89c578d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2585,13 +2680,24 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 377149861}
   m_GameObject: {fileID: 1714175263}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: -2.8, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.008726558, w: 0.999962}
+  m_LocalPosition: {x: -8, y: -2.7, z: 0}
   m_LocalScale: {x: 0.7073952, y: 0.6677856, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1714175271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714175263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1629505336, guid: 670c7321985c8f143af5633a383de94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726006038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3106,7 @@ Prefab:
     - target: {fileID: 50000013810691024, guid: b93d0474b33e4d44ba25384c86449a49,
         type: 2}
       propertyPath: m_Mass
-      value: 0.61237454
+      value: 1.131609
       objectReference: {fileID: 0}
     - target: {fileID: 4000010779053404, guid: b93d0474b33e4d44ba25384c86449a49, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3160,7 +3266,7 @@ GameObject:
   - 50: {fileID: 1917930074}
   m_Layer: 0
   m_Name: woodPlank (2)
-  m_TagString: Untagged
+  m_TagString: wood_struct
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3667,7 +3773,7 @@ Prefab:
     - target: {fileID: 50000013810691024, guid: b93d0474b33e4d44ba25384c86449a49,
         type: 2}
       propertyPath: m_Mass
-      value: 0.6251967
+      value: 0.6251965
       objectReference: {fileID: 0}
     - target: {fileID: 4000010779053404, guid: b93d0474b33e4d44ba25384c86449a49, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3832,7 +3938,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 50
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
