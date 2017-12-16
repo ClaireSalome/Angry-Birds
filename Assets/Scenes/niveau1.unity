@@ -545,12 +545,12 @@ Prefab:
     - target: {fileID: 60000012791332146, guid: 7a5069df61bac9f4290db3aa963740f8,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50000010914781334, guid: 7a5069df61bac9f4290db3aa963740f8,
         type: 2}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
