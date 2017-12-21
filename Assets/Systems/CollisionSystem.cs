@@ -29,9 +29,12 @@ public class CollisionSystem : FSystem {
 					mo.vitesse.y = 0f;
 				}
 
-				//				if (target.tag.Equals ("wood_struct")) {
-				//					mo.vitesse.x = 0f;
-				//				}
+				if (target.tag.Equals ("wood_struct")) {
+					Rigidbody2D dP = go.GetComponent<Rigidbody2D> ();
+					Rigidbody2D rB = target.GetComponent<Rigidbody2D> ();
+					mo.vitesse.x  = (mo.vitesse.x*(dP.mass - rB.mass)) / (dP.mass + rB.mass);
+					mo.vitesse.y  = (mo.vitesse.y*(dP.mass - rB.mass)) / (dP.mass + rB.mass);
+				}
 
 				if (target != null && target.tag.Equals ("reward")) {
 					Collect co = target.GetComponent<Collect> ();

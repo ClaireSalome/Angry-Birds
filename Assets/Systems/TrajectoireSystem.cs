@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
+using System.Collections;
 
 public class TrajectoireSystem : FSystem {
 	//système pour calculer les vecteurs vitesses sur les axes
@@ -53,6 +54,12 @@ public class TrajectoireSystem : FSystem {
 					// si la vitesse est nulle, le projectile ne bouge plus
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
 						mo.inMovement = false;
+						//faire une pause pour l'affichage
+						int i = 0 ;
+						while (i < 100000) {
+							i++;
+						}
+						//new Wait().Start();
 						mo.new_projectile = true;
 					}
 				}
@@ -69,4 +76,24 @@ public class TrajectoireSystem : FSystem {
 		}
 
 	}
+
+//	public class Wait : MonoBehaviour
+//	{
+//		private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
+//
+//		public void Start(){
+//			Debug.Log ("ci");
+//			StartCoroutine(resetPro());
+//		}
+//
+//		IEnumerator resetPro() {
+//			Debug.Log ("first");
+//			Move mo = _projectile.First ().GetComponent<Move> ();
+//			yield return new WaitForSeconds(3);
+//			Debug.Log ("Coucou");
+//			mo.new_projectile = true;
+//		}
+//
+//
+//	}
 }

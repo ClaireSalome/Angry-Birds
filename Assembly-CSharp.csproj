@@ -48,8 +48,10 @@
      <Compile Include="Assets\Components\Collect.cs" />
      <Compile Include="Assets\Components\DataProjectile.cs" />
      <Compile Include="Assets\Components\Move.cs" />
+     <Compile Include="Assets\Components\PointPosition.cs" />
      <Compile Include="Assets\Components\TotalScore.cs" />
      <Compile Include="Assets\Systems\CollisionSystem.cs" />
+     <Compile Include="Assets\Systems\EasyUISystem.cs" />
      <Compile Include="Assets\Systems\ProjectileFactorySystem.cs" />
      <Compile Include="Assets\Systems\TrajectoireSystem.cs" />
      <Compile Include="Assets\Systems\UIMenu.cs" />

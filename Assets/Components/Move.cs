@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Move : MonoBehaviour {
 	//composant pour récupérer les entrées du joueur concernant l'angle et la vitesse
@@ -24,5 +25,7 @@ public class Move : MonoBehaviour {
 	//pour un nouveau tir
 	public bool new_projectile = false ;
 
+	public int numOfTrajectoryPoints = 20;
 
+	public ArrayList trajectoryPoints = new ArrayList();
 }
