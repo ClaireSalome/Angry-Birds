@@ -66,7 +66,7 @@ public class EasyUISystem : FSystem {
 			mv.vitesse.x = vx_slider.value;
 			mv.vitesse_init.x = vx_slider.value;
 		}
-		updateArrow ();
+		//updateArrow ();
 		updateTrajectory ();
 	}
 
@@ -77,7 +77,7 @@ public class EasyUISystem : FSystem {
 			mv.vitesse.y = vy_slider.value;
 			mv.vitesse_init.y = vy_slider.value;
 		}
-		updateArrow ();	
+		//updateArrow ();	
 		updateTrajectory ();
 	}
 
@@ -93,7 +93,6 @@ public class EasyUISystem : FSystem {
 				GameObject.Destroy (pt);
 			}
 			mv.trajectoryPoints.Clear ();
-
 			DataProjectile dp = go.GetComponent<DataProjectile> ();
 			GameObject point = _trajectoryPoints.First ();
 			float dt = 0;
@@ -103,10 +102,9 @@ public class EasyUISystem : FSystem {
 				mv.trajectoryPoints.Add (newp);
 				float dy = vy * dt + (dp.masse * mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 				float dx = vx * dt;
-				vy += dp.masse * mv.earth_gravity.y * dt;
 				Vector3 pos = new Vector3 (dx, dy, 0);
 				newp.transform.position += pos;
-				dt += 0.2f;
+				dt += 0.1f;
 			}
 		}
 	}

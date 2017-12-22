@@ -484,6 +484,11 @@ Prefab:
       propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: numOfTrajectoryPoints
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
   m_IsPrefabParent: 0
@@ -1139,7 +1144,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 06c609b580a906d4e8bcde41ae9496f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2577,7 +2582,7 @@ MonoBehaviour:
   inMovement: 0
   groundContact: 0
   new_projectile: 0
-  numOfTrajectoryPoints: 40
+  numOfTrajectoryPoints: 20
 --- !u!58 &1714175267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3100,11 +3105,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011414866418, guid: 91004a9f88bb11048b575cfe2603621f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.45
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4000011414866418, guid: 91004a9f88bb11048b575cfe2603621f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.216
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000011414866418, guid: 91004a9f88bb11048b575cfe2603621f, type: 2}
       propertyPath: m_LocalPosition.z

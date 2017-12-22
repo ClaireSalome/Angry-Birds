@@ -25,7 +25,7 @@ public class Move : MonoBehaviour {
 	//pour un nouveau tir
 	public bool new_projectile = false ;
 
-	public int numOfTrajectoryPoints = 20;
+	public int numOfTrajectoryPoints = 20; 
 
 	public ArrayList trajectoryPoints = new ArrayList();
 }
