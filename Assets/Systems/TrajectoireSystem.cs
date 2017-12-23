@@ -56,8 +56,7 @@ public class TrajectoireSystem : FSystem {
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
 						mo.inMovement = false;
 						//faire une pause pour l'affichage
-						//new Wait().Start();
-						mo.new_projectile = true;
+						go.AddComponent<Wait>();
 					}
 				}
 					
@@ -73,24 +72,24 @@ public class TrajectoireSystem : FSystem {
 		}
 
 	}
+		
+}
 
-//	public class Wait : MonoBehaviour
-//	{
-//		private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
-//
-//		public void Start(){
-//			Debug.Log ("ci");
-//			StartCoroutine(resetPro());
-//		}
-//
-//		IEnumerator resetPro() {
-//			Debug.Log ("first");
-//			Move mo = _projectile.First ().GetComponent<Move> ();
-//			yield return new WaitForSeconds(3);
-//			Debug.Log ("Coucou");
-//			mo.new_projectile = true;
-//		}
-//
-//
-//	}
+
+// MonoBehaviour pour l'attente entre l'arret du projectile et re initialisation de la position
+public class Wait : MonoBehaviour
+{
+	private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
+
+	public void Start(){
+		StartCoroutine(resetPro());
+	}
+
+	IEnumerator resetPro() {
+		Move mo = _projectile.First ().GetComponent<Move> ();
+		yield return new WaitForSeconds(1.5f);
+		mo.new_projectile = true;
+	}
+
+
 }
