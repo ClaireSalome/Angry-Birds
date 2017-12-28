@@ -9,76 +9,88 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012570816542}
+  m_RootGameObject: {fileID: 1000011067542046}
   m_IsPrefabParent: 1
---- !u!1 &1000012570816542
+--- !u!1 &1000011067542046
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000010779053404}
-  - 212: {fileID: 212000010544831748}
-  - 61: {fileID: 61000012242817192}
-  - 50: {fileID: 50000013810691024}
+  - 4: {fileID: 4000011436337476}
+  - 212: {fileID: 212000010974673286}
+  - 50: {fileID: 50000012185944284}
+  - 60: {fileID: 60000012378448886}
   m_Layer: 0
-  m_Name: woodPlank
+  m_Name: wood_triangle
   m_TagString: wood_struct
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010779053404
+--- !u!4 &4000011436337476
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012570816542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06, y: -3.7, z: 0}
-  m_LocalScale: {x: 0.5182578, y: 0.8441999, z: 1}
+  m_GameObject: {fileID: 1000011067542046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.95521, y: -3.2384558, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &50000013810691024
+--- !u!50 &50000012185944284
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012570816542}
+  m_GameObject: {fileID: 1000011067542046}
   m_UseAutoMass: 0
-  m_Mass: 5
-  m_LinearDrag: 0.5
-  m_AngularDrag: 0.5
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61000012242817192
-BoxCollider2D:
+--- !u!60 &60000012378448886
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012570816542}
+  m_GameObject: {fileID: 1000011067542046}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 5b668c3dfb74817418723a843fd7aa62, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0007040949, y: -0.0045845415}
-  serializedVersion: 2
-  m_Size: {x: 0.65310985, y: 2.1430771}
---- !u!212 &212000010544831748
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.04, y: 0.35}
+      - {x: -0.17999999, y: 0.26999998}
+      - {x: -0.7, y: -0.29999998}
+      - {x: -0.7, y: -0.35}
+      - {x: 0.7, y: -0.35}
+      - {x: 0.7, y: -0.29}
+      - {x: 0.08, y: 0.35}
+    - - {x: -0.22999999, y: -0.089999996}
+      - {x: -0.22, y: -0.089999996}
+      - {x: 0.31, y: -0.17}
+      - {x: -0.31, y: -0.17}
+      - {x: -0.29999998, y: -0.17}
+--- !u!212 &212000010974673286
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012570816542}
+  m_GameObject: {fileID: 1000011067542046}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -101,8 +113,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9bb63c930186dda44a47a7990362441c, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8ea2bf2337b538f41b170b20fd505a97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

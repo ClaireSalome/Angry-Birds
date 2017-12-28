@@ -21,6 +21,7 @@ public class ProjectileFactorySystem : FSystem {
 				mo.new_projectile = false;
 				mo.transform.position = mo.init_position;
 				mo.vitesse = mo.vitesse_init ;
+				mo.idStructure.Clear ();
 
 				proj.transform.eulerAngles = new Vector3 (0, 0, 1);
 
