@@ -51,7 +51,15 @@ public class CollisionSystem : FSystem {
 		// détection des récompenses
 		foreach (GameObject go in _triggered2D) {
 			Triggered2D tr = go.GetComponent<Triggered2D> ();
+			Move mo = go.GetComponent<Move> ();
 			foreach (GameObject target in tr.Targets){
+
+				if (target.tag.Equals ("stone_struct") && mo.inMovement == true && mo.stone_touched==false) {
+					mo.vitesse.x = 0;
+					target.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("brokenS",typeof(Sprite)) as Sprite;
+					target.tag = "broken_stone";
+					mo.stone_touched = true;
+				}
 
 				if (target.tag.Equals ("reward")) {
 					Collect co = target.GetComponent<Collect> ();

@@ -18,6 +18,8 @@ TagManager:
   - start
   - rules
   - about
+  - stone_struct
+  - broken_stone
   layers:
   - Default
   - TransparentFX

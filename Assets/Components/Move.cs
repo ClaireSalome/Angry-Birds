@@ -29,5 +29,11 @@ public class Move : MonoBehaviour {
 
 	public ArrayList trajectoryPoints = new ArrayList();
 
+	// pour modifier la trajectoire une seule fois quand on touche un object wood
 	public ArrayList idStructure = new ArrayList ();
+
+
+	// pour les pierres à fissurer : on ne fissure que la première touchée
+	public bool stone_touched = false;
+
 }

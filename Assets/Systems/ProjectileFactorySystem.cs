@@ -22,6 +22,7 @@ public class ProjectileFactorySystem : FSystem {
 				mo.transform.position = mo.init_position;
 				mo.vitesse = mo.vitesse_init ;
 				mo.idStructure.Clear ();
+				mo.stone_touched = false;
 
 				proj.transform.eulerAngles = new Vector3 (0, 0, 1);
 
