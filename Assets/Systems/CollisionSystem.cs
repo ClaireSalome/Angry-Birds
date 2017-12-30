@@ -9,6 +9,7 @@ public class CollisionSystem : FSystem {
 	private Family _triggered2D = FamilyManager.getFamily(new AllOfComponents(typeof(Triggered2D))) ;
 	private Family _incollision = FamilyManager.getFamily(new AllOfComponents(typeof(InCollision2D)));
 
+
 	//récupérer le score total pour les récompenses
 	private TotalScore total = GameObject.FindGameObjectWithTag("total").GetComponent<TotalScore>() ;
 
@@ -54,19 +55,28 @@ public class CollisionSystem : FSystem {
 			Move mo = go.GetComponent<Move> ();
 			foreach (GameObject target in tr.Targets){
 
-				if (target.tag.Equals ("stone_struct") && mo.inMovement == true && mo.stone_touched==false) {
-					mo.vitesse.x = 0;
-					target.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("brokenS",typeof(Sprite)) as Sprite;
-					target.tag = "broken_stone";
-					mo.stone_touched = true;
-				}
-
 				if (target.tag.Equals ("reward")) {
 					Collect co = target.GetComponent<Collect> ();
 					total.score_total += co.reward;
 					GameObjectManager.unbind (target);
 					GameObject.Destroy (target);
 				}
+
+				if (target.tag.Equals ("broken_stone") && mo.inMovement == true && mo.stone_touched == false) {
+					mo.vitesse.x = 0;
+					GameObjectManager.unbind (target);
+					GameObject.Destroy (target);
+					mo.stone_touched = true;
+
+				}
+
+				if (target.tag.Equals ("stone_struct") && mo.inMovement == true && mo.stone_touched==false) {
+					mo.vitesse.x = 0;
+					target.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("brokenS",typeof(Sprite)) as Sprite;
+					target.tag = "broken_stone";
+					mo.stone_touched = true;
+				}
+					
 			}
 		}
 	}
