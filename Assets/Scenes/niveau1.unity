@@ -90,6 +90,47 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8641929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 8641931}
+  - 114: {fileID: 8641930}
+  m_Layer: 0
+  m_Name: Next_Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &8641930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8641929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a6f5ce8cb276e42a1ca079f3abb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nb_destroyed_struct: 0
+--- !u!4 &8641931
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8641929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.4000006, y: -1.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1001 &276630787
 Prefab:
   m_ObjectHideFlags: 0
@@ -1134,6 +1175,10 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     _typeFullName: CollisionSystem
     _pause: 0
+  - _typeAssemblyQualifiedName: NextLevelSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: NextLevelSystem
+    _pause: 0
   _updateSystemDescriptions:
   - _typeAssemblyQualifiedName: EasyUISystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -1240,7 +1285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bonus : + 0'
+  m_Text: 'Score :  0'
 --- !u!222 &1140901685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1979,6 +2024,7 @@ MonoBehaviour:
   groundContact: 0
   new_projectile: 0
   numOfTrajectoryPoints: 30
+  stone_touched: 0
 --- !u!58 &1714175267
 CircleCollider2D:
   m_ObjectHideFlags: 0
