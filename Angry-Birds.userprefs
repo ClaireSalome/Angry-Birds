@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\DestroyedSystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Components\DestroyedStruct.cs">
     <Files>
-      <File FileName="Assets\Systems\CollisionSystem.cs" Line="14" Column="99" />
-      <File FileName="Assets\Systems\DestroyedSystem.cs" Line="38" Column="23" />
+      <File FileName="Assets\Systems\NextLevelSystem.cs" Line="22" Column="115" />
+      <File FileName="Assets\Systems\UISystem.cs" Line="100" Column="3" />
+      <File FileName="Assets\Components\DestroyedStruct.cs" Line="10" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000010974673286}
   - 50: {fileID: 50000012185944284}
   - 60: {fileID: 60000012378448886}
+  - 114: {fileID: 114000010273687586}
   m_Layer: 0
   m_Name: wood_triangle
   m_TagString: wood_struct
@@ -85,6 +86,18 @@ PolygonCollider2D:
       - {x: 0.31, y: -0.17}
       - {x: -0.31, y: -0.17}
       - {x: -0.29999998, y: -0.17}
+--- !u!114 &114000010273687586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011067542046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1a0ce021ca84f469c909807a21f69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyed: 0
 --- !u!212 &212000010974673286
 SpriteRenderer:
   m_ObjectHideFlags: 1

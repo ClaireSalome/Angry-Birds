@@ -53,8 +53,8 @@
      <Compile Include="Assets\Components\PointPosition.cs" />
      <Compile Include="Assets\Components\TotalScore.cs" />
      <Compile Include="Assets\Systems\CollisionSystem.cs" />
-     <Compile Include="Assets\Systems\DestroyedSystem.cs" />
      <Compile Include="Assets\Systems\EasyUISystem.cs" />
+     <Compile Include="Assets\Systems\NextLevelSystem.cs" />
      <Compile Include="Assets\Systems\ProjectileFactorySystem.cs" />
      <Compile Include="Assets\Systems\TrajectoireSystem.cs" />
      <Compile Include="Assets\Systems\UIMenu.cs" />

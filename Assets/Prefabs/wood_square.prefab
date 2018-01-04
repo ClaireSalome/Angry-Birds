@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000013307654020}
   - 50: {fileID: 50000010117139134}
   - 61: {fileID: 61000011577346280}
+  - 114: {fileID: 114000013235883596}
   m_Layer: 0
   m_Name: wood_square
   m_TagString: wood_struct
@@ -73,6 +74,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
+--- !u!114 &114000013235883596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012795776228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1a0ce021ca84f469c909807a21f69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyed: 0
 --- !u!212 &212000013307654020
 SpriteRenderer:
   m_ObjectHideFlags: 1

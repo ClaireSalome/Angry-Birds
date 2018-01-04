@@ -28,6 +28,6 @@ public class UIMenu : FSystem {
 
     public void startGame()
     {
-        GameObjectManager.loadScene("niveau0");
+        GameObjectManager.loadScene("niveau1");
     }
 }

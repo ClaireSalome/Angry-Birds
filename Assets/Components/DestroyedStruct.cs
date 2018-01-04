@@ -5,4 +5,8 @@ public class DestroyedStruct : MonoBehaviour {
 
 	public int nb_destroyed_struct = 0;
 
+	public string level_to_load = "";
+
+	public float destroyed_treshold = -2.5f;
+
 }
