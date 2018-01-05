@@ -128,6 +128,6 @@ public class EasyUISystem : FSystem {
 
 	public void updateScore() {
 		TotalScore ts = GameObject.FindGameObjectWithTag ("total").GetComponent<TotalScore> ();
-		score.text = "Bonus : + "+ts.score_total;
+		score.text = "Score :  "+ts.score_total;
 	}
 }

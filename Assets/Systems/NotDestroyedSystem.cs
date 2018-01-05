@@ -2,9 +2,9 @@
 using FYFY;
 using System.Collections;
 
-// system pour les niveaux où il faut détruire les structures
+// system pour les niveaux où il ne faut PAS détruire les structures
 
-public class NextLevelSystem : FSystem {
+public class NotDestroyedSystem : FSystem {
 
 	private GameObject[] structures = GameObject.FindGameObjectsWithTag("wood_struct");
 
@@ -25,23 +25,23 @@ public class NextLevelSystem : FSystem {
 				d.destroyed = true;
 				nextLvl.GetComponent<DestroyedStruct> ().nb_destroyed_struct++;
 				// mise a jour du score
-				ts.score_total += 2;
+				ts.score_total -= 2;
 			}
 		}
-
-		if (nextLvl.GetComponent<DestroyedStruct> ().nb_destroyed_struct == structures.Length) {
+			
+		if (GameObject.FindGameObjectsWithTag("reward").Length == 0) {
 			//NIVEAU TERMINE : affichage d'un message
 			GameObject winText = GameObject.FindGameObjectWithTag("win") ;
 			winText.GetComponent<Canvas>().sortingOrder = 2;
-			nextLvl.AddComponent<ChangeLevel> ();
+			nextLvl.AddComponent<ChangeLevelAndNotDestroyed> ();
 
 		}
-	
+
 	}
 }
 
 // pour avoir un délai entre la réussite du niveau et le changement de scène
-public class ChangeLevel : MonoBehaviour
+public class ChangeLevelAndNotDestroyed : MonoBehaviour
 {
 	private Family dest = FamilyManager.getFamily (new AllOfComponents(typeof(DestroyedStruct)));
 
