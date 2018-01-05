@@ -21,6 +21,9 @@ TagManager:
   - stone_struct
   - broken_stone
   - win
+  - obstacle
+  - projectile
+  - seesaw
   layers:
   - Default
   - TransparentFX

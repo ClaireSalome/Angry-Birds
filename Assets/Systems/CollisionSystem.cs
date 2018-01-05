@@ -9,7 +9,6 @@ public class CollisionSystem : FSystem {
 	private Family _triggered2D = FamilyManager.getFamily(new AllOfComponents(typeof(Triggered2D))) ;
 	private Family _incollision = FamilyManager.getFamily(new AllOfComponents(typeof(InCollision2D)));
 
-
 	//récupérer le score total pour les récompenses
 	private TotalScore total = GameObject.FindGameObjectWithTag("total").GetComponent<TotalScore>() ;
 
@@ -49,7 +48,7 @@ public class CollisionSystem : FSystem {
 			}
 		}
 
-		// détection des récompenses
+		// détection des récompenses et des obstacles
 		foreach (GameObject go in _triggered2D) {
 			Triggered2D tr = go.GetComponent<Triggered2D> ();
 			Move mo = go.GetComponent<Move> ();
@@ -75,6 +74,10 @@ public class CollisionSystem : FSystem {
 					target.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("brokenS",typeof(Sprite)) as Sprite;
 					target.tag = "broken_stone";
 					mo.stone_touched = true;
+				}
+
+				if (target.tag.Equals ("obstacle") ) {
+					mo.vitesse.x = 0;
 				}
 					
 			}
