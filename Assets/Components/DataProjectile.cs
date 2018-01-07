@@ -7,6 +7,9 @@ public class DataProjectile : MonoBehaviour {
 	//masse du projectile
 	public float masse = 1.0f ;
 
-	//volume du projectile ?
+	//rayon du projectile 
+
+	public float rayon = 0.25f;
+
 
 }

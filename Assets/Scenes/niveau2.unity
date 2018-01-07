@@ -441,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452381766
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,7 +1107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &987366889
 Transform:
   m_ObjectHideFlags: 0
@@ -2198,6 +2198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nb_destroyed_struct: 0
   level_to_load: niveau3
+  destroyed_treshold: -2.5
 --- !u!1 &1642994760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1642994761
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,6 +2401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 1
+  rayon: 0.25
 --- !u!114 &1714175266
 MonoBehaviour:
   m_ObjectHideFlags: 0
