@@ -44,7 +44,7 @@ public class CollisionSystem : FSystem {
 					GameObjectManager.unbind (target);
 					GameObject.Destroy (target);
 				}
-
+					
 			}
 		}
 
@@ -79,7 +79,13 @@ public class CollisionSystem : FSystem {
 				if (target.tag.Equals ("obstacle") ) {
 					mo.vitesse.x = 0;
 				}
-					
+
+//				if (target != null && target.tag.Equals ("geyser")) {
+//					Rigidbody2D rbody = go.GetComponent<Rigidbody2D> ();
+//					rbody.AddForce (new Vector2 (0, 60));
+//					Debug.Log ("geyser");
+//				}
+//					
 			}
 		}
 	}

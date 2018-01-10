@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 1
+  rayon: 0.25
 --- !u!58 &463918729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1622,6 +1623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 1
+  rayon: 0.25
 --- !u!114 &1495820474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3330,7 +3332,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070258986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.65, y: 3.47, z: 0}
+  m_LocalPosition: {x: 5.99, y: 3.47, z: 0}
   m_LocalScale: {x: 2.7, y: 4.58, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -3455,7 +3457,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013533279170, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.82
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 4000013533279170, guid: 7a5069df61bac9f4290db3aa963740f8, type: 2}
       propertyPath: m_LocalPosition.y

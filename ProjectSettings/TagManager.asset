@@ -24,6 +24,7 @@ TagManager:
   - obstacle
   - projectile
   - seesaw
+  - geyser
   layers:
   - Default
   - TransparentFX
