@@ -1691,10 +1691,6 @@ MonoBehaviour:
     _typeFullName: NotDestroyedSystem
     _pause: 0
   _updateSystemDescriptions:
-  - _typeAssemblyQualifiedName: UISystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    _typeFullName: UISystem
-    _pause: 0
   - _typeAssemblyQualifiedName: ProjectileFactorySystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: ProjectileFactorySystem
@@ -1702,6 +1698,10 @@ MonoBehaviour:
   - _typeAssemblyQualifiedName: TrajectoireAirSystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: TrajectoireAirSystem
+    _pause: 0
+  - _typeAssemblyQualifiedName: EasyUISystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    _typeFullName: EasyUISystem
     _pause: 0
   _lateUpdateSystemDescriptions: []
   _forceUpdateInspector: 0

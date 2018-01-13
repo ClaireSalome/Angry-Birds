@@ -30,7 +30,7 @@ public class SeesawSystem : FSystem {
 						foreach (GameObject proj in _projectiles) {
 							if (proj.tag.Equals ("projectile")) {
 								Rigidbody2D rb = proj.GetComponent<Rigidbody2D> ();
-								rb.AddForce (new Vector2 (0, 60));
+								rb.AddForce (new Vector2 (0, 70));
 							}
 						}
 					}
@@ -53,8 +53,21 @@ public class SeesawSystem : FSystem {
 					GameObject.Destroy (reward);
 				}
 			}
+		}
+		GameObject pro = GameObject.FindGameObjectWithTag ("projectile");
+		GameObject obs = GameObject.FindGameObjectWithTag ("obstacle");
+		GameObject ground = GameObject.FindGameObjectWithTag ("Ground");
+		BoxCollider2D bc = obs.GetComponent<BoxCollider2D>();
+		BoxCollider2D ground_bc = ground.GetComponent<BoxCollider2D>();
+		Rigidbody2D rigid_b = pro.GetComponent<Rigidbody2D>();
+		CircleCollider2D circle_col = pro.GetComponent<CircleCollider2D> ();
 
+		if (bc.IsTouching (circle_col)) {
+			rigid_b.velocity = new Vector2 (0, 0);
+		}
 
+		if(circle_col.IsTouching(ground_bc)){
+			pro.transform.position = new Vector2 (8.65f,-2.23f);
 		}
 	}
 }

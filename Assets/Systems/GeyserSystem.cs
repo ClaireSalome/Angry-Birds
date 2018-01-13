@@ -23,8 +23,8 @@ public class GeyserSystem : FSystem {
 					ps.Play ();
 					exp.explosionProgress += Time.deltaTime;
 
-					if (projectile != null && projectile.transform.position.x > particle.transform.position.x - ps.shape.radius*2 &&
-						projectile.transform.position.x < particle.transform.position.x + ps.shape.radius*2 ) {
+					if (projectile != null && projectile.transform.position.x > particle.transform.position.x - ps.shape.radius &&
+						projectile.transform.position.x < particle.transform.position.x + ps.shape.radius ) {
 						Rigidbody2D rbody = projectile.GetComponent<Rigidbody2D> ();
 						rbody.isKinematic = false;
 						rbody.AddForce (new Vector2 (0, 120), ForceMode2D.Impulse);

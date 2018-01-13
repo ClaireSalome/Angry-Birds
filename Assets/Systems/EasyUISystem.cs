@@ -96,12 +96,15 @@ public class EasyUISystem : FSystem {
 			DataProjectile dp = go.GetComponent<DataProjectile> ();
 			GameObject point = _trajectoryPoints.First ();
 			float dt = 0;
+			float S = Mathf.PI * Mathf.Pow(dp.rayon,2);
 			for (int i = 0; i < mv.numOfTrajectoryPoints; i++) {
 				GameObject newp = Object.Instantiate<GameObject> (point);
 				GameObjectManager.bind (newp);
 				mv.trajectoryPoints.Add (newp);
-				float dy = vy * dt + (dp.masse * mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-				float dx = vx * dt;
+//				float dy = vy * dt + (mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
+//				float dx = vx * dt;
+				float dx =  (vx * dt) - (0.5f*S*1.2f*Mathf.Pow(vx,2)*Mathf.Pow(dt,2)) ;
+				float dy = (vy * dt) + (mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) -  (0.5f * S * 1.2f * Mathf.Pow (vy, 2) * Mathf.Pow(dt,2));
 				Vector3 pos = new Vector3 (dx, dy, 0);
 				newp.transform.position += pos;
 				dt += 0.1f;

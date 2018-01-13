@@ -47,15 +47,15 @@ public class TrajectoireEauSystem : FSystem {
 				//si le projectile n'a pas touché le sol
 				//TODO attention à l'usage de la masse : à revoir
 				if (mo.groundContact == false) {
-					delta_y = (mo.vitesse.y * dt) + (dp.masse * mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
+					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 					delta_y -= sigma * viscosite_eau * mo.vitesse.y * dt;
-					mo.vitesse.y += dp.masse * mo.earth_gravity.y * dt;
+					mo.vitesse.y += mo.earth_gravity.y * dt;
 					mo.vitesse.y -= sigma * viscosite_eau * mo.vitesse.y;
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {
 					//le projectile a touché le sol -> force de frottement
-					delta_x += mu * (dp.masse * mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
+					delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 					delta_x -= sigma * viscosite_eau * mo.vitesse.x * dt;
 					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
 					mo.vitesse.x -= sigma * viscosite_eau * mo.vitesse.x ;
