@@ -14,6 +14,7 @@ public class TrajectoireEauSystem : FSystem {
 	private float mu = 0.5f;
 
 	//pour frottement de l'eau
+	private float Cx = 1f;
 	private float mvEau = 1000f;
 	private float viscosite_eau = 0.0001f;
 
@@ -40,25 +41,34 @@ public class TrajectoireEauSystem : FSystem {
 				//sigma pour Stokes
 				float sigma = 6 * Mathf.PI * dp.rayon;
 
+				//surface du projectile
+				float S = Mathf.PI * Mathf.Pow(dp.rayon,2);
+				//volume du projectile
+				float V = (4f/3f)*Mathf.PI*Mathf.Pow(dp.rayon,3);
+
 				//equations du cours
-				float delta_x =  (mo.vitesse.x * dt) - sigma*viscosite_eau*mo.vitesse.x*dt;
+				float delta_x =  (mo.vitesse.x * dt)  - ((Cx*S*mvEau*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f)) ;
 				float delta_y = 0f;
+				mo.vitesse.x -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse);
+				if (mo.vitesse.x <= 0f) {
+					mo.vitesse.x = 0f;
+				}
 
 				//si le projectile n'a pas touché le sol
-				//TODO attention à l'usage de la masse : à revoir
 				if (mo.groundContact == false) {
 					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-					delta_y -= sigma * viscosite_eau * mo.vitesse.y * dt;
+//					delta_y -= sigma * viscosite_eau * mo.vitesse.y * dt;
+					delta_y -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse);
+					delta_y += ((mvEau*V*mo.earth_gravity.y)/2f) * Mathf.Pow(dt,2) ;
 					mo.vitesse.y += mo.earth_gravity.y * dt;
-					mo.vitesse.y -= sigma * viscosite_eau * mo.vitesse.y;
+					mo.vitesse.y -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse);//*dt ?
+					mo.vitesse.y += mvEau*V*mo.earth_gravity.y*dt ;
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {
 					//le projectile a touché le sol -> force de frottement
 					delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-					delta_x -= sigma * viscosite_eau * mo.vitesse.x * dt;
 					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
-					mo.vitesse.x -= sigma * viscosite_eau * mo.vitesse.x ;
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.x*Mathf.Rad2Deg );
 					}
 				// si la vitesse est nulle, le projectile ne bouge plus

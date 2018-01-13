@@ -57,12 +57,12 @@ public class SeesawSystem : FSystem {
 		GameObject pro = GameObject.FindGameObjectWithTag ("projectile");
 		GameObject obs = GameObject.FindGameObjectWithTag ("obstacle");
 		GameObject ground = GameObject.FindGameObjectWithTag ("Ground");
-		BoxCollider2D bc = obs.GetComponent<BoxCollider2D>();
+		PolygonCollider2D pc = obs.GetComponent<PolygonCollider2D>();
 		BoxCollider2D ground_bc = ground.GetComponent<BoxCollider2D>();
 		Rigidbody2D rigid_b = pro.GetComponent<Rigidbody2D>();
 		CircleCollider2D circle_col = pro.GetComponent<CircleCollider2D> ();
 
-		if (bc.IsTouching (circle_col)) {
+		if (pc.IsTouching (circle_col)) {
 			rigid_b.velocity = new Vector2 (0, 0);
 		}
 

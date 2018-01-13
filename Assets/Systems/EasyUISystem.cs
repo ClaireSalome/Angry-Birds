@@ -103,8 +103,9 @@ public class EasyUISystem : FSystem {
 				mv.trajectoryPoints.Add (newp);
 //				float dy = vy * dt + (mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 //				float dx = vx * dt;
-				float dx =  (vx * dt) - (0.5f*S*1.2f*Mathf.Pow(vx,2)*Mathf.Pow(dt,2)) ;
-				float dy = (vy * dt) + (mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) -  (0.5f * S * 1.2f * Mathf.Pow (vy, 2) * Mathf.Pow(dt,2));
+				float dx =  (vx * dt) - ((S*1.2f*Mathf.Pow(vx,2) * Mathf.Pow(dt,2))/(dp.masse*4f)) ;
+				float dy = (vy * dt) + ((mv.earth_gravity.y / 2f) * Mathf.Pow (dt, 2))-  ((S * 1.2f * Mathf.Pow (vy, 2) * Mathf.Pow(dt,2))/(dp.masse*4f)) ;
+
 				Vector3 pos = new Vector3 (dx, dy, 0);
 				newp.transform.position += pos;
 				dt += 0.1f;
