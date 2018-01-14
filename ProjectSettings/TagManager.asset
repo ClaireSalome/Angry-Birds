@@ -28,6 +28,9 @@ TagManager:
   - distance
   - cross
   - result_dist
+  - Fire
+  - mission
+  - mission_button
   layers:
   - Default
   - TransparentFX

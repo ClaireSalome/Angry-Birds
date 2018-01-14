@@ -24,7 +24,12 @@ public class UISystem : FSystem {
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
+	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
 	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
+
+	//canvas
+	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
+
 
 	//two points for measuring a distance
 	public List<GameObject> points = new List<GameObject>();
@@ -40,6 +45,7 @@ public class UISystem : FSystem {
 			//ajout des evenements a ne faire qu'une fois
 			shoot.onClick.AddListener (triggerShoot);
 			distance.onClick.AddListener (measureDistance);
+			mission_but.onClick.AddListener (hideMission);
 
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
@@ -143,5 +149,9 @@ public class UISystem : FSystem {
 	public void updateScore() {
 		TotalScore ts = GameObject.FindGameObjectWithTag ("total").GetComponent<TotalScore> ();
 		score.text = "Score :  "+ts.score_total;
+	}
+
+	public void hideMission(){
+		mission.sortingOrder = -10 ;
 	}
 }
