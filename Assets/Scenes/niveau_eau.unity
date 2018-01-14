@@ -793,6 +793,16 @@ Prefab:
       propertyPath: numOfTrajectoryPoints
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: masse
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: rayon
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
   m_IsPrefabParent: 0
@@ -2894,7 +2904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vy = 32
+  m_Text: Vy = 20
 --- !u!222 &1411794368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3298,7 +3308,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vx = 32
+  m_Text: 'Vx = 20
+
+'
 --- !u!222 &1692845490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3352,7 +3364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afcf4c0a75820341827b2c0c59146f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masse: 1
+  masse: 100
   rayon: 0.25
 --- !u!114 &1714175266
 MonoBehaviour:
@@ -3769,9 +3781,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2000645187}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 35
+  m_MaxValue: 50
   m_WholeNumbers: 0
-  m_Value: 32
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4405,9 +4417,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 331778241}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 35
+  m_MaxValue: 50
   m_WholeNumbers: 0
-  m_Value: 32
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
