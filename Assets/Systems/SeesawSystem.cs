@@ -67,7 +67,7 @@ public class SeesawSystem : FSystem {
 		}
 
 		if(circle_col.IsTouching(ground_bc)){
-			pro.transform.position = new Vector2 (8.65f,-2.23f);
+			pro.transform.position = new Vector2 (9.29f,-2.23f);
 		}
 	}
 }

@@ -25,6 +25,9 @@ TagManager:
   - projectile
   - seesaw
   - geyser
+  - distance
+  - cross
+  - result_dist
   layers:
   - Default
   - TransparentFX

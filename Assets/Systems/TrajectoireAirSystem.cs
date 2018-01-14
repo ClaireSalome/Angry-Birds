@@ -17,7 +17,6 @@ public class TrajectoireAirSystem : FSystem {
 	private float Cx = 1f;
 	private float mvAir = 1.2f;
 
-
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 

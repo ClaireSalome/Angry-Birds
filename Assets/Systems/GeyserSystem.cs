@@ -35,7 +35,6 @@ public class GeyserSystem : FSystem {
 						exp.reloadProgress = 0f;
 						exp.explosionProgress = 0f;
 						ps.Stop ();
-						Debug.ClearDeveloperConsole ();
 					}
 				}
 			}

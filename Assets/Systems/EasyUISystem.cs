@@ -2,6 +2,7 @@
 using FYFY;
 using UnityEngine.UI ;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EasyUISystem : FSystem {
 
@@ -23,6 +24,12 @@ public class EasyUISystem : FSystem {
 
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
+	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
+	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
+
+	//two points for measuring a distance
+	public List<GameObject> points = new List<GameObject>();
+	bool measuring = false;
 
 	// arrow sprite
 	GameObject direction_vector = GameObject.FindGameObjectWithTag("arrow");
@@ -33,6 +40,7 @@ public class EasyUISystem : FSystem {
 		if (addEvent == true) {
 			//ajout des evenements a ne faire qu'une fois
 			shoot.onClick.AddListener (triggerShoot);
+			distance.onClick.AddListener (measureDistance);
 
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
@@ -50,6 +58,10 @@ public class EasyUISystem : FSystem {
 			} else {
 				vx_slider.enabled = true;
 				vy_slider.enabled = true;
+			}
+
+			if (measuring) {
+				measureDistance ();
 			}
 		}
 
@@ -119,6 +131,36 @@ public class EasyUISystem : FSystem {
 			mv.inMovement = true;
 		}
 
+	}
+
+	public void measureDistance(){
+
+		if (measuring == false) {
+			foreach (GameObject pt in points) {
+				GameObjectManager.unbind (pt);
+				GameObject.Destroy (pt);
+			}
+			points.Clear ();
+			res_dist.text = "0 m";
+			measuring = true;
+		}
+
+		if (Input.GetMouseButtonDown (0)) { 
+			Vector3 pos = Input.mousePosition;
+			pos = Camera.main.ScreenToWorldPoint(pos);
+
+			GameObject go = GameObject.FindGameObjectWithTag ("cross");
+			GameObject newc = Object.Instantiate<GameObject> (go);
+			GameObjectManager.bind (newc);
+			points.Add (newc);
+			newc.transform.position = pos;
+		}
+
+		if (points.Count == 2) {
+			float dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
+			res_dist.text = dist.ToString("F1")+" m";
+			measuring = false;
+		}
 	}
 
 	public void updateArrow() {

@@ -65,6 +65,7 @@
      <Compile Include="Assets\Systems\TrajectoireSystem.cs" />
      <Compile Include="Assets\Systems\UIMenu.cs" />
      <Compile Include="Assets\Systems\UISystem.cs" />
+     <Compile Include="Assets\Systems\WindSystem.cs" />
      <None Include="Assets\Textures\uipack\Spritesheet\redSheet.xml" />
      <None Include="Assets\Textures\uipack\Spritesheet\yellowSheet.xml" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />

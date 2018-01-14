@@ -10,6 +10,7 @@ public class TrajectoireSystem : FSystem {
 	// _projectile = famille des entités ayant le composant Move
 	private Family _projectile = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
 
+	// private bool end = false;
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
@@ -48,6 +49,20 @@ public class TrajectoireSystem : FSystem {
 					go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {
+//					if (end == false ) {
+//						float dist = mo.vitesse_init.x*mo.vitesse_init.y/9.81f;
+//						float hauteur = 0.5f * Mathf.Pow (mo.vitesse_init.y, 2)/9.81f;
+//						end = true;
+//						Debug.Log ("hauteur: "+hauteur);
+//						Debug.Log("dist calcule: "+dist);
+//
+//						GameObject g = GameObject.FindGameObjectWithTag ("cross");
+//						GameObject newc = Object.Instantiate<GameObject> (g);
+//						GameObjectManager.bind (newc);
+//						newc.transform.position = go.transform.position;
+//
+//					}
+
                     //le projectile a touché le sol -> force de frottement
                     delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
                     mo.vitesse.x += mu * mo.earth_gravity.y * dt;
