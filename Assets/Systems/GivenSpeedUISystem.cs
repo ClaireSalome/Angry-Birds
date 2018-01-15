@@ -4,7 +4,7 @@ using UnityEngine.UI ;
 using System.Collections.Generic;
 using System.Linq;
 
-public class UISystem : FSystem {
+public class GivenSpeedUISystem : FSystem {
 
 	//pour ne faire qu'une fois les ajouts d'evenements
 	private bool addEvent = true; 
@@ -12,24 +12,22 @@ public class UISystem : FSystem {
 	//modifications sur les projectiles
 	private Family _projectile = FamilyManager.getFamily (new AllOfComponents(typeof(Move)));
 
-	//get texts
-	Text vx_text = GameObject.FindGameObjectWithTag("Vx_Text").GetComponent<Text> ();
-	Text vy_text = GameObject.FindGameObjectWithTag("Vy_Text").GetComponent<Text> ();
-	Text score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
+	private Vector3 vitesse;
 
-	//get sliders
-	Slider vx_slider = GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() ;
-	Slider vy_slider = GameObject.FindGameObjectWithTag("Vy_Slider").GetComponent<Slider>() ;
+	//get score
+	Text score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
 
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
+	Button placer = GameObject.FindGameObjectWithTag("placer").GetComponent<Button> () ;
 	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
 	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
 
 	//canvas
 	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
-
+	bool placingReward = false;
+	GameObject reward = new GameObject();
 
 	//two points for measuring a distance
 	public List<GameObject> points = new List<GameObject>();
@@ -46,60 +44,48 @@ public class UISystem : FSystem {
 			shoot.onClick.AddListener (triggerShoot);
 			distance.onClick.AddListener (measureDistance);
 			mission_but.onClick.AddListener (hideMission);
+			placer.onClick.AddListener (placeReward);
+			//updateArrow ();
 
-			vx_slider.onValueChanged.AddListener (delegate {
-				updateVxValue();
-			});
-			vy_slider.onValueChanged.AddListener (delegate {
-				updateVyValue();
-			});
-
-			updateArrow ();
+			vitesse = _projectile.First ().GetComponent<Move> ().vitesse;
 
 			addEvent = false;
 		}
 		foreach (GameObject go in _projectile) {
-			Move mv = go.GetComponent<Move> ();
-			if (mv.inMovement) {
-				vx_slider.enabled = false;
-				vy_slider.enabled = false;
-			} else {
-				vx_slider.enabled = true;
-				vy_slider.enabled = true;
-			}
-
 			if (measuring) {
 				measureDistance ();
 			}
+
+			if (placingReward) {
+				placeReward ();
+			}
 		}
-			
+
 		updateScore ();
 	}
+		
+	public void placeReward(){
 
+		if (placingReward == false && reward.tag.Equals("reward")) {
 
-	//update the slider value displayed at screen 
-	//update speed value
-	public void updateVxValue() {
-		vx_text.text = "Vx = "+vx_slider.value.ToString("F1")+" m/s";
-		foreach (GameObject go in _projectile) {
-			Move mv = go.GetComponent<Move> ();
-			mv.vitesse.x = vx_slider.value;
-			mv.vitesse_init.x = vx_slider.value;
+			GameObjectManager.unbind (reward);
+			GameObject.Destroy (reward);
 		}
-		updateArrow ();
-	}
+		placingReward = true;
 
-	public void updateVyValue() {
-		vy_text.text = "Vy = "+vy_slider.value.ToString("F1")+" m/s";
-		foreach (GameObject go in _projectile) {
-			Move mv = go.GetComponent<Move> ();
-			mv.vitesse.y = vy_slider.value;
-			mv.vitesse_init.y = vy_slider.value;
+		if (Input.GetMouseButtonDown (0)) { 
+			Vector3 pos = Input.mousePosition;
+			pos = Camera.main.ScreenToWorldPoint(pos);
+
+			GameObject go = GameObject.FindGameObjectWithTag ("reward");
+			reward = Object.Instantiate<GameObject> (go);
+			GameObjectManager.bind (reward);
+			reward.transform.position = pos;
+
+			placingReward = false;
+			shoot.interactable = true;
 		}
-		updateArrow ();	
 	}
-
-
 
 	// lance le projectile
 	public void triggerShoot() {
@@ -111,7 +97,7 @@ public class UISystem : FSystem {
 	}
 
 	public void measureDistance(){
-		
+
 		if (measuring == false) {
 			foreach (GameObject pt in points) {
 				GameObjectManager.unbind (pt);
@@ -143,9 +129,9 @@ public class UISystem : FSystem {
 	public void updateArrow() {
 
 		//angle
-		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vx_slider.value/Mathf.Sqrt(Mathf.Pow(vx_slider.value,2)+Mathf.Pow(vy_slider.value,2)))*Mathf.Rad2Deg));
+		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vitesse.x/Mathf.Sqrt(Mathf.Pow(vitesse.x,2)+Mathf.Pow(vitesse.y,2)))*Mathf.Rad2Deg));
 		//puissance
-		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vx_slider.value, 2) + Mathf.Pow (vy_slider.value, 2)) / 2,direction_vector.transform.localScale.y,0f);
+		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vitesse.x, 2) + Mathf.Pow (vitesse.y, 2)) / 2,direction_vector.transform.localScale.y,0f);
 	}
 
 
