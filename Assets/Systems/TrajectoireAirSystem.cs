@@ -32,7 +32,7 @@ public class TrajectoireAirSystem : FSystem {
 			if (mo.inMovement == true) {
 
 				//si le projectile sort du champ de la caméra
-				if (go.transform.position.x > 3f * Camera.main.orthographicSize) {
+				if (go.transform.position.x > 3f * Camera.main.orthographicSize || go.transform.position.x < -3f * Camera.main.orthographicSize) {
 					mo.inMovement = false;
 					mo.new_projectile = true;
 				}

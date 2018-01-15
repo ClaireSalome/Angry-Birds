@@ -87,16 +87,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="CollisionManager">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/CollisionManager.dll</HintPath>
+ <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/CollisionManager.dll</HintPath>
  </Reference>
  <Reference Include="FYFY">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY.dll</HintPath>
+ <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/FYFY.dll</HintPath>
  </Reference>
  <Reference Include="FYFY_Inspector">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/FYFY_Inspector.dll</HintPath>
+ <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/FYFY_Inspector.dll</HintPath>
  </Reference>
  <Reference Include="TriggerManager">
- <HintPath>C:/Users/clair/Documents/Universite/M2/ISG/Projet/Angry-Birds/Assets/Libraries/TriggerManager.dll</HintPath>
+ <HintPath>C:/Users/Beatriz/Documents/GitHub/Angry-Birds/Assets/Libraries/TriggerManager.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -78,7 +78,7 @@ public class EasyUISystem : FSystem {
 	//update the slider value displayed at screen 
 	//update speed value
 	public void updateVxValue() {
-		vx_text.text = "Vx = "+vx_slider.value.ToString("F1");
+		vx_text.text = "Vx = "+vx_slider.value.ToString("F1")+" m/s";
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.x = vx_slider.value;
@@ -89,7 +89,7 @@ public class EasyUISystem : FSystem {
 	}
 
 	public void updateVyValue() {
-		vy_text.text = "Vy = "+vy_slider.value.ToString("F1");
+		vy_text.text = "Vy = "+vy_slider.value.ToString("F1")+" m/s";
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			mv.vitesse.y = vy_slider.value;
