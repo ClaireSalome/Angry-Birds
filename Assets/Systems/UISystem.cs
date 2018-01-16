@@ -16,6 +16,7 @@ public class UISystem : FSystem {
 	Text vx_text = GameObject.FindGameObjectWithTag("Vx_Text").GetComponent<Text> ();
 	Text vy_text = GameObject.FindGameObjectWithTag("Vy_Text").GetComponent<Text> ();
 	Text score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
+	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
 
 	//get sliders
 	Slider vx_slider = GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() ;
@@ -25,11 +26,9 @@ public class UISystem : FSystem {
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
 	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
-	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
 
 	//canvas
 	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
-
 
 	//two points for measuring a distance
 	public List<GameObject> points = new List<GameObject>();
@@ -39,7 +38,6 @@ public class UISystem : FSystem {
 	GameObject direction_vector = GameObject.FindGameObjectWithTag("arrow");
 
 
-	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		if (addEvent == true) {
 			//ajout des evenements a ne faire qu'une fois
@@ -60,14 +58,17 @@ public class UISystem : FSystem {
 		}
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
+
+			// bloque les sliders pendant le tir
 			if (mv.inMovement) {
 				vx_slider.enabled = false;
 				vy_slider.enabled = false;
-			} else {
+			} else { 
 				vx_slider.enabled = true;
 				vy_slider.enabled = true;
 			}
 
+			// on attend la selection des points par l'utilisateur 
 			if (measuring) {
 				measureDistance ();
 			}
@@ -77,8 +78,7 @@ public class UISystem : FSystem {
 	}
 
 
-	//update the slider value displayed at screen 
-	//update speed value
+	//update the slider value displayed at screen -> update speed value
 	public void updateVxValue() {
 		vx_text.text = "Vx = "+vx_slider.value.ToString("F1")+" m/s";
 		foreach (GameObject go in _projectile) {
@@ -98,8 +98,7 @@ public class UISystem : FSystem {
 		}
 		updateArrow ();	
 	}
-
-
+		
 
 	// lance le projectile
 	public void triggerShoot() {
@@ -110,8 +109,11 @@ public class UISystem : FSystem {
 
 	}
 
+
+	// recupere deux points selectionnes par l'utilisateur et affiche la distance entre les deux 
 	public void measureDistance(){
-		
+
+		// on efface les points precedents si besoin
 		if (measuring == false) {
 			foreach (GameObject pt in points) {
 				GameObjectManager.unbind (pt);
@@ -121,11 +123,13 @@ public class UISystem : FSystem {
 			res_dist.text = "0 m";
 			measuring = true;
 		}
-
+			 
 		if (Input.GetMouseButtonDown (0)) { 
+			// on recupere la position du clic en coordonnees pixels, on les transforme en coordonnees du monde 
 			Vector3 pos = Input.mousePosition;
 			pos = Camera.main.ScreenToWorldPoint(pos);
 
+			// on affiche une croix au point cliqué 
 			GameObject go = GameObject.FindGameObjectWithTag ("cross");
 			GameObject newc = Object.Instantiate<GameObject> (go);
 			GameObjectManager.bind (newc);
@@ -133,15 +137,23 @@ public class UISystem : FSystem {
 			newc.transform.position = pos;
 		}
 
+		float dist;
+		// si un point a ete selectionne, on affiche la distance entre ce point et la souris 
+		if (points.Count == 1) {
+			dist = Vector3.Distance (points [0].transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition))/2; 
+			res_dist.text = dist.ToString("F1")+" m"; 
+		}
+
+		// si les deux points ont ete selectiones, on affiche la distance entre les deux
 		if (points.Count == 2) {
-			float dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
+			dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
 			res_dist.text = dist.ToString("F1")+" m";
 			measuring = false;
 		}
 	}
 
+	// mise a jour de l'affichage du vecteur vitesse
 	public void updateArrow() {
-
 		//angle
 		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vx_slider.value/Mathf.Sqrt(Mathf.Pow(vx_slider.value,2)+Mathf.Pow(vy_slider.value,2)))*Mathf.Rad2Deg));
 		//puissance
@@ -149,11 +161,13 @@ public class UISystem : FSystem {
 	}
 
 
+	// mise a jour du score
 	public void updateScore() {
 		TotalScore ts = GameObject.FindGameObjectWithTag ("total").GetComponent<TotalScore> ();
 		score.text = "Score :  "+ts.score_total;
 	}
 
+	// cacher le pop-up de la mission
 	public void hideMission(){
 		mission.sortingOrder = -10 ;
 	}
