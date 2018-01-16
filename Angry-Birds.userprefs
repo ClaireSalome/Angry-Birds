@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\UISystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\EasyUISystem.cs">
     <Files>
-      <File FileName="Assets\Systems\UISystem.cs" Line="24" Column="15" />
+      <File FileName="Assets\Systems\UISystem.cs" Line="4" Column="35" />
+      <File FileName="Assets\Systems\GivenSpeedUISystem.cs" Line="4" Column="35" />
+      <File FileName="Assets\Systems\EasyUISystem.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using FYFY;
 using UnityEngine.UI ;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,6 +27,8 @@ public class UISystem : FSystem {
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
 	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
+	Button accueil = GameObject.Find("accueil").GetComponent<Button>();
+	Button replay = GameObject.Find("replay").GetComponent<Button>();
 
 	//canvas
 	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
@@ -44,6 +47,8 @@ public class UISystem : FSystem {
 			shoot.onClick.AddListener (triggerShoot);
 			distance.onClick.AddListener (measureDistance);
 			mission_but.onClick.AddListener (hideMission);
+			accueil.onClick.AddListener (home);
+			replay.onClick.AddListener (reloadScene);
 
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
@@ -170,5 +175,13 @@ public class UISystem : FSystem {
 	// cacher le pop-up de la mission
 	public void hideMission(){
 		mission.sortingOrder = -10 ;
+	}
+
+	public void home(){
+		GameObjectManager.loadScene ("menu_niveau");
+	}
+
+	public void reloadScene(){
+		GameObjectManager.loadScene ( SceneManager.GetActiveScene ().buildIndex);
 	}
 }
