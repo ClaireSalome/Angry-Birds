@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using FYFY;
+using System;
 using UnityEngine.UI ;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
+
 
 public class GivenSpeedUISystem : FSystem {
 
@@ -20,15 +22,21 @@ public class GivenSpeedUISystem : FSystem {
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
 	Button distance = GameObject.FindGameObjectWithTag("distance").GetComponent<Button> () ;
-	Button placer = GameObject.FindGameObjectWithTag("placer").GetComponent<Button> () ;
 	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
 	Button accueil = GameObject.Find("accueil").GetComponent<Button>();
 	Button replay = GameObject.Find("replay").GetComponent<Button>();
+	Button placer;
+
+	//pour modifier la masse
+	InputField masse;
+	bool massEditable = false;
 
 	//canvas
 	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
-	bool placingReward = false;
+
+	//pour placer une recompense
 	GameObject reward = GameObject.FindGameObjectWithTag ("reward");
+	bool placingReward = false;
 
 	//two points for measuring a distance
 	public List<GameObject> points = new List<GameObject>();
@@ -44,13 +52,33 @@ public class GivenSpeedUISystem : FSystem {
 			shoot.onClick.AddListener (triggerShoot);
 			distance.onClick.AddListener (measureDistance);
 			mission_but.onClick.AddListener (hideMission);
-			placer.onClick.AddListener (placeReward);
 			accueil.onClick.AddListener (home);
 			replay.onClick.AddListener (reloadScene);
+
+
+			if (GameObject.FindGameObjectsWithTag ("placer").Length != 0) {
+				placer = GameObject.FindGameObjectWithTag("placer").GetComponent<Button>() ;
+				placer.onClick.AddListener (placeReward);
+			}
+
+			if (GameObject.FindGameObjectsWithTag ("masse").Length != 0) {
+				masse = GameObject.FindGameObjectWithTag("masse").GetComponent<InputField>() ;
+				massEditable = true;
+			}
 
 			addEvent = false;
 		}
 		foreach (GameObject go in _projectile) {
+
+//			Move mv = go.GetComponent<Move> ();
+//			if (mv.inMovement) {
+//				.enabled = false;
+//				.enabled = false;
+//			} else {
+//				.enabled = true;
+//				.enabled = true;
+//			}
+
 			// on attend la selection des points par l'utilisateur 
 			if (measuring) {
 				measureDistance ();
@@ -58,6 +86,10 @@ public class GivenSpeedUISystem : FSystem {
 
 			if (placingReward) {
 				placeReward ();
+			}
+
+			if (massEditable) {
+				updateMass ();
 			}
 		}
 
@@ -108,7 +140,7 @@ public class GivenSpeedUISystem : FSystem {
 
 			// on affiche une croix au point cliqué 
 			GameObject go = GameObject.FindGameObjectWithTag ("cross");
-			GameObject newc = Object.Instantiate<GameObject> (go);
+			GameObject newc = UnityEngine.Object.Instantiate<GameObject> (go);
 			GameObjectManager.bind (newc);
 			points.Add (newc);
 			newc.transform.position = pos;
@@ -126,6 +158,14 @@ public class GivenSpeedUISystem : FSystem {
 			dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
 			res_dist.text = dist.ToString("F1")+" m";
 			measuring = false;
+		}
+	}
+
+	public void updateMass(){
+		if (masse.text != "") {
+			DataProjectile dp = _projectile.First ().GetComponent<DataProjectile> ();
+			dp.masse = Convert.ToSingle (masse.text);
+			shoot.interactable = true;
 		}
 	}
 		

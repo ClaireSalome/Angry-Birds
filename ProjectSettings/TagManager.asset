@@ -32,6 +32,7 @@ TagManager:
   - mission
   - mission_button
   - placer
+  - masse
   layers:
   - Default
   - TransparentFX

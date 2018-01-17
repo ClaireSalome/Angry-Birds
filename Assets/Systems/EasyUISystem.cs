@@ -185,7 +185,6 @@ public class EasyUISystem : FSystem {
 		score.text = "Score :  "+ts.score_total;
 	}
 
-
 	public void hideMission(){
 		mission.sortingOrder = -10 ;
 	}

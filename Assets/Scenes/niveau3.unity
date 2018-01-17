@@ -329,7 +329,7 @@ GameObject:
   - 114: {fileID: 303608415}
   - 114: {fileID: 303608414}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Win Canvas
   m_TagString: win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ RectTransform:
   m_Children:
   - {fileID: 1938342063}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.1, y: 2.18}
@@ -1288,7 +1288,7 @@ GameObject:
   - 114: {fileID: 750156412}
   - 114: {fileID: 750156411}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Upper Canvas
   m_TagString: mission
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1363,7 +1363,7 @@ RectTransform:
   m_Children:
   - {fileID: 296406350}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.57, y: 4.52}
@@ -1430,7 +1430,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
 --- !u!1 &802050606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,7 +1473,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
 --- !u!1001 &868972372
 Prefab:
   m_ObjectHideFlags: 0
@@ -1889,7 +1889,7 @@ Transform:
   - {fileID: 382756698}
   - {fileID: 868972373}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
 --- !u!1 &989065052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1930,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 13
 --- !u!1 &1049313374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,7 +2263,7 @@ RectTransform:
   - {fileID: 961990761}
   - {fileID: 737947616}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.99, y: -4.48}
@@ -2392,7 +2392,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!1 &1303270941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3068,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 5
 --- !u!1 &1501279880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,7 +3678,7 @@ Transform:
   - {fileID: 383083301}
   - {fileID: 1140329123}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
 --- !u!1 &1818153840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4674,7 +4674,7 @@ RectTransform:
   m_Children:
   - {fileID: 450811334}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -11.1, y: -0.76}
