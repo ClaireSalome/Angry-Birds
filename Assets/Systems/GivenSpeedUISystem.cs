@@ -109,10 +109,13 @@ public class GivenSpeedUISystem : FSystem {
 		if (Input.GetMouseButtonDown (0)) { 
 			Vector3 pos = Input.mousePosition;
 			pos = Camera.main.ScreenToWorldPoint(pos);
-			reward.transform.position = pos;
 
-			placingReward = false;
-			shoot.interactable = true;
+			if (pos.x > -7) {
+				reward.transform.position = pos;
+
+				placingReward = false;
+				shoot.interactable = true;
+			}
 		}
 	}
 

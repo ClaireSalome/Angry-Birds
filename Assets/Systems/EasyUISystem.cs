@@ -83,6 +83,7 @@ public class EasyUISystem : FSystem {
 
 			if (measuring) {
 				measureDistance ();
+				//distance.interactable = false;
 			}
 		}
 
@@ -177,8 +178,17 @@ public class EasyUISystem : FSystem {
 			newc.transform.position = pos;
 		}
 
+		float dist;
+		// si un point a ete selectionne, on affiche la distance entre ce point et la souris 
+		if (points.Count == 1) {
+			dist = Vector3.Distance (points [0].transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition))/2; 
+			res_dist.text = dist.ToString("F1")+" m"; 
+		}
+
+		// si les deux points ont ete selectiones, on affiche la distance entre les deux
 		if (points.Count == 2) {
-			float dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
+			// distance.interactable = true;
+			dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
 			res_dist.text = dist.ToString("F1")+" m";
 			measuring = false;
 		}
