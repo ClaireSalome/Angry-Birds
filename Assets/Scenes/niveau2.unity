@@ -682,7 +682,7 @@ Prefab:
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: vitesse_init.x
-      value: 2.5
+      value: 11.6
       objectReference: {fileID: 0}
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -692,7 +692,7 @@ Prefab:
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: vitesse.x
-      value: 2.5
+      value: 11.6
       objectReference: {fileID: 0}
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -3192,7 +3192,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342.65, y: 0.43469954}
+  m_AnchoredPosition: {x: -308.2, y: 0.43469954}
   m_SizeDelta: {x: 97.3, y: 19.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338706581
@@ -3227,7 +3227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Vx = 2.5 m/s
+  m_Text: 'Vx = 11.6 m/s
 
 '
 --- !u!222 &1338706582
@@ -4028,8 +4028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earth_gravity: {x: 0, y: -9.81, z: 0}
   init_position: {x: -8, y: -2.7, z: 0}
-  vitesse_init: {x: 2.5, y: 4.5, z: 0}
-  vitesse: {x: 2.5, y: 4.5, z: 0}
+  vitesse_init: {x: 11.6, y: 4.5, z: 0}
+  vitesse: {x: 11.6, y: 4.5, z: 0}
   inMovement: 0
   groundContact: 0
   new_projectile: 0
@@ -4243,7 +4243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1790045941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5109,8 +5109,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 617541454}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.125, y: 0}
+  m_AnchorMax: {x: 0.125, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

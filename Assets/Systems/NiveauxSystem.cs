@@ -19,10 +19,14 @@ public class NiveauxSystem : FSystem {
 	Button lvl_9 = GameObject.Find ("lvl9").GetComponent<Button> ();
 	Button lvl_10 = GameObject.Find ("lvl10").GetComponent<Button> ();
 
+	Button accueil = GameObject.Find("accueil").GetComponent<Button>();
+
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 	
 		if (addEvent) {
+
+			accueil.onClick.AddListener (home);
 
 			//pour charger les niveaux
 			//TODO griser les menus non accessibles tant qu'on n'a pas fini certains niveaux
@@ -40,6 +44,10 @@ public class NiveauxSystem : FSystem {
 			addEvent = false;
 		}
 	
+	}
+
+	public void home(){
+		GameObjectManager.loadScene ("menu");
 	}
 
 	private void level1(){

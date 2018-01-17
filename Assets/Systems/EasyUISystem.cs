@@ -20,7 +20,7 @@ public class EasyUISystem : FSystem {
 	Text score = GameObject.FindGameObjectWithTag("score").GetComponent<Text>();
 
 	//get sliders
-	Slider vx_slider = GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() ;
+	Slider vx_slider = (GameObject.FindGameObjectWithTag("Vx_Slider") != null) ? GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() : null ;
 	Slider vy_slider = GameObject.FindGameObjectWithTag("Vy_Slider").GetComponent<Slider>() ;
 
 	//get buttons
@@ -58,9 +58,12 @@ public class EasyUISystem : FSystem {
 			aide.onClick.AddListener (showHelp);
 			close.onClick.AddListener (hideHelp);
 
-			vx_slider.onValueChanged.AddListener (delegate {
-				updateVxValue();
-			});
+			if (vx_slider != null) {
+				vx_slider.onValueChanged.AddListener (delegate {
+					updateVxValue ();
+				});
+			}
+
 			vy_slider.onValueChanged.AddListener (delegate {
 				updateVyValue();
 			});
@@ -69,10 +72,12 @@ public class EasyUISystem : FSystem {
 		foreach (GameObject go in _projectile) {
 			Move mv = go.GetComponent<Move> ();
 			if (mv.inMovement) {
-				vx_slider.enabled = false;
+				if(vx_slider != null)
+					vx_slider.enabled = false;
 				vy_slider.enabled = false;
 			} else {
-				vx_slider.enabled = true;
+				if(vx_slider != null)
+					vx_slider.enabled = true;
 				vy_slider.enabled = true;
 			}
 
@@ -110,10 +115,12 @@ public class EasyUISystem : FSystem {
 	}
 
 	public void updateTrajectory(){
-		float vx = vx_slider.value;
-		float vy = vy_slider.value;
+		
 		foreach (GameObject go in _projectile) {
+
 			Move mv = go.GetComponent<Move> ();
+			float vx = (vx_slider != null) ? vx_slider.value : mv.vitesse_init.x;
+			float vy = vy_slider.value;
 
 			//on supprime les points concstituant l'ancienne trajectoire
 			foreach (GameObject pt in mv.trajectoryPoints) {
