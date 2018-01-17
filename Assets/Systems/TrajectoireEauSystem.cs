@@ -14,7 +14,7 @@ public class TrajectoireEauSystem : FSystem {
 	private float mu = 0.5f;
 
 	//pour frottement de l'eau
-	private float Cx = 0.3f;
+	private float Cx = 0.5f;
 	private float mvEau = 1000f;
 	private float viscosite_eau = 0.0001f;
 
@@ -50,19 +50,23 @@ public class TrajectoireEauSystem : FSystem {
 				float delta_x =  (mo.vitesse.x * dt)  - ((Cx*S*mvEau*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f)) ;
 				float delta_y = 0f;
 				mo.vitesse.x -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse);
-				if (mo.vitesse.x <= 0f) {
-					mo.vitesse.x = 0f;
-				}
+//				if (mo.vitesse.x <= 0f) {
+//					mo.vitesse.x = 0f;
+//				}
 
 				//si le projectile n'a pas touché le sol
 				if (mo.groundContact == false) {
-					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-//					delta_y -= sigma * viscosite_eau * mo.vitesse.y * dt;
-					delta_y -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse);
-					delta_y += ((-mvEau*V*mo.earth_gravity.y)/2f) * Mathf.Pow(dt,2) ;
-					mo.vitesse.y += mo.earth_gravity.y * dt;
-					mo.vitesse.y -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse);//*dt ?
-					mo.vitesse.y += -mvEau*V*mo.earth_gravity.y*dt ;
+//					Probleme avec ça
+//					
+					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)/2f*dp.masse) * Mathf.Pow(0.01f,2) ;
+					Debug.Log ("force");
+					Debug.Log((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse));
+					Debug.Log((mvEau*V*mo.earth_gravity.y*dt /dp.masse));
+//					
+//					
+					mo.vitesse.y += mo.earth_gravity.y * dt - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse))- (mvEau*V*mo.earth_gravity.y*0.01f /dp.masse) ;
+					Debug.Log ("vitesse");
+					Debug.Log(mo.vitesse.y);
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {

@@ -981,7 +981,7 @@ Prefab:
     - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: masse
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -4675,7 +4675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afcf4c0a75820341827b2c0c59146f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masse: 100
+  masse: 50
   rayon: 0.25
 --- !u!114 &1714175266
 MonoBehaviour:
