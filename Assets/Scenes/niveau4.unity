@@ -1119,7 +1119,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "Mission : Vous devez d\xE9truire la structure.\nTip : la pierre est solide
+    mais pas indestructible ..."
 --- !u!222 &516602342
 CanvasRenderer:
   m_ObjectHideFlags: 0

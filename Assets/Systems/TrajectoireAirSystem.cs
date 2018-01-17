@@ -31,7 +31,7 @@ public class TrajectoireAirSystem : FSystem {
 
 			if (mo.inMovement == true) {
 
-				//si le projectile sort du champ de la caméra
+				//si le projectile sort du champ de la caméra, le remettre à la position initiale
 				if (go.transform.position.x > 3f * Camera.main.orthographicSize || go.transform.position.x < -3f * Camera.main.orthographicSize) {
 					mo.inMovement = false;
 					mo.new_projectile = true;
@@ -46,28 +46,19 @@ public class TrajectoireAirSystem : FSystem {
 				float delta_x =  (mo.vitesse.x * dt) - ((Cx*S*mvAir*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f)) ;
 				float delta_y = 0f;
 				mo.vitesse.x -= (Cx * S * mvAir * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse);
-				if (mo.vitesse.x <= 0f) {
-					mo.vitesse.x = 0f;
-				}
 
-
-				//si le projectile n'a pas touché le sol
+				//si le projectile n'a pas touché le sol, modification de y(t) et Vy(t)
 				if (mo.groundContact == false) {
-					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-					delta_y -= (Cx * S * mvAir * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse);
-					delta_y += ((-mvAir*V*mo.earth_gravity.y)/2f) * Mathf.Pow(dt,2) ;
-
-					mo.vitesse.y +=  mo.earth_gravity.y * dt;
-					mo.vitesse.y -= (Cx * S * mvAir * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse);//*dt ?
-					mo.vitesse.y += -mvAir*V*mo.earth_gravity.y*dt ;
+					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvAir * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse)) - ((mvAir*V*mo.earth_gravity.y)/2f*dp.masse * Mathf.Pow(dt,2)) ;
+					mo.vitesse.y +=  mo.earth_gravity.y * dt -  ((Cx * S * mvAir * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse)) - (mvAir*V*mo.earth_gravity.y*dt/dp.masse) ;
 					go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {
-					//le projectile a touché le sol -> force de frottement
+					//le projectile a touché le sol -> force de frottement + plus de modification sur l'axe des y
 					delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
 					go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.x*Mathf.Rad2Deg );
-					// si la vitesse est nulle, le projectile ne bouge plus
+					// si la vitesse est nulle, le projectile ne bouge plus, on le remet à la position initiale après une courte pause
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
 						mo.inMovement = false;
 						//faire une pause pour l'affichage

@@ -29,9 +29,12 @@ public class UISystem : FSystem {
 	Button mission_but = GameObject.FindGameObjectWithTag("mission_button").GetComponent<Button>() ;
 	Button accueil = GameObject.Find("accueil").GetComponent<Button>();
 	Button replay = GameObject.Find("replay").GetComponent<Button>();
+	Button aide = GameObject.Find("help").GetComponent<Button>();
+	Button close = GameObject.Find ("close").GetComponent<Button> ();
 
 	//canvas
 	Canvas mission = GameObject.FindGameObjectWithTag("mission").GetComponent<Canvas>();
+	Canvas help = GameObject.Find ("Help_Canvas").GetComponent<Canvas> ();
 
 	//two points for measuring a distance
 	public List<GameObject> points = new List<GameObject>();
@@ -49,6 +52,8 @@ public class UISystem : FSystem {
 			mission_but.onClick.AddListener (hideMission);
 			accueil.onClick.AddListener (home);
 			replay.onClick.AddListener (reloadScene);
+			aide.onClick.AddListener (showHelp);
+			close.onClick.AddListener (hideHelp);
 
 			vx_slider.onValueChanged.AddListener (delegate {
 				updateVxValue();
@@ -183,5 +188,15 @@ public class UISystem : FSystem {
 
 	public void reloadScene(){
 		GameObjectManager.loadScene ( SceneManager.GetActiveScene ().buildIndex);
+	}
+
+	public void showHelp(){
+		help.sortingOrder = 9;
+		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = 9;
+	}
+
+	public void hideHelp(){
+		help.sortingOrder = -9;
+		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = -9;
 	}
 }

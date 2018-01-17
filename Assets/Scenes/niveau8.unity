@@ -378,7 +378,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "Mission : La vitesse est donn\xE9e. Choisissez la masse du projectile qui
+    permettra de d\xE9truire la structure."
 --- !u!222 &117531787
 CanvasRenderer:
   m_ObjectHideFlags: 0

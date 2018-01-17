@@ -1420,7 +1420,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "Mission : Vous devez d\xE9truire la structure.\nTip : Les pommes donnent
+    des points suppl\xE9mentaires."
 --- !u!222 &875310447
 CanvasRenderer:
   m_ObjectHideFlags: 0

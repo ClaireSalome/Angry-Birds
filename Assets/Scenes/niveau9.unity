@@ -499,7 +499,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "Mission : R\xE9cup\xE9rez la r\xE9compense."
 --- !u!222 &340115181
 CanvasRenderer:
   m_ObjectHideFlags: 0

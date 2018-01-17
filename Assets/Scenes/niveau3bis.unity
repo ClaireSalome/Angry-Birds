@@ -619,7 +619,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "Mission : La vitesse est donn\xE9e. Placez la pomme au point de chute du
+    projectile afin de la r\xE9cup\xE9rer."
 --- !u!222 &427977003
 CanvasRenderer:
   m_ObjectHideFlags: 0
