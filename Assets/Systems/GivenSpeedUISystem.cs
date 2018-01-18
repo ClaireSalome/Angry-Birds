@@ -170,6 +170,13 @@ public class GivenSpeedUISystem : FSystem {
 	}
 
 	public void updateMass(){
+		if (masse.text != "" && Convert.ToSingle (masse.text) > 999) {
+			DataProjectile dp = _projectile.First ().GetComponent<DataProjectile> ();
+			dp.masse = 999f;
+			masse.text = "999";
+			shoot.interactable = true;
+		}
+
 		if (masse.text != "") {
 			DataProjectile dp = _projectile.First ().GetComponent<DataProjectile> ();
 			dp.masse = Convert.ToSingle (masse.text);
