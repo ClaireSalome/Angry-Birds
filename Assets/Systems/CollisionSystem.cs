@@ -44,7 +44,6 @@ public class CollisionSystem : FSystem {
 					GameObjectManager.unbind (target);
 					GameObject.Destroy (target);
 				}
-					
 			}
 		}
 

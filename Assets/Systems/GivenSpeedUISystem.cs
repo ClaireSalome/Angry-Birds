@@ -81,7 +81,10 @@ public class GivenSpeedUISystem : FSystem {
 				if (placer != null)
 					placer.interactable = false;
 			} else {
-				shoot.interactable = true; 
+				// on ne peut pas tirer tant qu'on n'a pas rentrer une masse
+				if (masse.text != "") {
+					shoot.interactable = true; 
+				}
 				if (placer != null)
 					placer.interactable = true;
 			}
@@ -176,16 +179,21 @@ public class GivenSpeedUISystem : FSystem {
 	}
 
 	public void updateMass(){
-		if (masse.text != "" && Convert.ToSingle (masse.text) > 999) {
-			DataProjectile dp = _projectile.First ().GetComponent<DataProjectile> ();
-			dp.masse = 999f;
-			masse.text = "999";
-			shoot.interactable = true;
-		}
 
 		if (masse.text != "") {
 			DataProjectile dp = _projectile.First ().GetComponent<DataProjectile> ();
-			dp.masse = Convert.ToSingle (masse.text);
+
+			float m;
+			bool isNumeric = float.TryParse (masse.text, out m);
+			if(! isNumeric || m <= 0){
+				dp.masse = 1f;
+				masse.text = "1";
+			} else if (m > 999) {
+				dp.masse = 999f;
+				masse.text = "999";
+			} else {
+				dp.masse = Convert.ToSingle (masse.text);
+			}
 			shoot.interactable = true;
 		}
 	}

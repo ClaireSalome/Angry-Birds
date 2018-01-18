@@ -4948,7 +4948,7 @@ GameObject:
   - 60: {fileID: 1398275617}
   m_Layer: 0
   m_Name: cactus
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

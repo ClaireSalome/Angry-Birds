@@ -57,6 +57,7 @@ public class SeesawSystem : FSystem {
 		GameObject pro = GameObject.FindGameObjectWithTag ("projectile");
 		GameObject obs = GameObject.FindGameObjectWithTag ("obstacle");
 		GameObject ground = GameObject.FindGameObjectWithTag ("Ground");
+		GameObject seesaw = GameObject.FindGameObjectWithTag ("seesaw");
 		PolygonCollider2D pc = obs.GetComponent<PolygonCollider2D>();
 		BoxCollider2D ground_bc = ground.GetComponent<BoxCollider2D>();
 		Rigidbody2D rigid_b = pro.GetComponent<Rigidbody2D>();
@@ -67,6 +68,7 @@ public class SeesawSystem : FSystem {
 		}
 
 		if(circle_col.IsTouching(ground_bc)){
+			seesaw.transform.eulerAngles = new Vector3 (0f, 0f, -17.5f);
 			pro.transform.position = new Vector2 (9.29f,-2.23f);
 		}
 	}

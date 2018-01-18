@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\EasyUISystem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\GivenSpeedUISystem.cs">
     <Files>
-      <File FileName="Assets\Systems\UISystem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Systems\GivenSpeedUISystem.cs" Line="46" Column="25" />
-      <File FileName="Assets\Systems\EasyUISystem.cs" Line="182" Column="81" />
-      <File FileName="Assets\Systems\TrajectoireEauSystem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Systems\TrajectoireAirSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Systems\UISystem.cs" Line="162" Column="33" />
+      <File FileName="Assets\Systems\GivenSpeedUISystem.cs" Line="189" Column="18" />
+      <File FileName="Assets\Systems\EasyUISystem.cs" Line="186" Column="39" />
       <File FileName="Assets\Systems\TrajectoireSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Components\Move.cs" Line="11" Column="52" />
+      <File FileName="Assets\Systems\CollisionSystem.cs" Line="46" Column="6" />
+      <File FileName="Assets\Systems\SeesawSystem.cs" Line="58" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
