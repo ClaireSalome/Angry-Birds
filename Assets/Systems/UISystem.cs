@@ -20,8 +20,8 @@ public class UISystem : FSystem {
 	Text res_dist = GameObject.FindGameObjectWithTag("result_dist").GetComponent<Text> () ;
 
 	//get sliders
-	Slider vx_slider = GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() ;
-	Slider vy_slider = GameObject.FindGameObjectWithTag("Vy_Slider").GetComponent<Slider>() ;
+	Slider vx_slider = (GameObject.FindGameObjectWithTag("Vx_Slider") != null) ? GameObject.FindGameObjectWithTag("Vx_Slider").GetComponent<Slider>() : null ;
+	Slider vy_slider = (GameObject.FindGameObjectWithTag("Vy_Slider") != null) ? GameObject.FindGameObjectWithTag("Vy_Slider").GetComponent<Slider>() : null ;
 
 	//get buttons
 	Button shoot = GameObject.FindGameObjectWithTag("Shoot").GetComponent<Button> () ;
@@ -55,12 +55,14 @@ public class UISystem : FSystem {
 			aide.onClick.AddListener (showHelp);
 			close.onClick.AddListener (hideHelp);
 
-			vx_slider.onValueChanged.AddListener (delegate {
-				updateVxValue();
-			});
-			vy_slider.onValueChanged.AddListener (delegate {
-				updateVyValue();
-			});
+			if(vx_slider != null)
+				vx_slider.onValueChanged.AddListener (delegate {
+					updateVxValue();
+				});
+			if(vy_slider != null)
+				vy_slider.onValueChanged.AddListener (delegate {
+					updateVyValue();
+				});
 
 			updateArrow ();
 
@@ -71,12 +73,16 @@ public class UISystem : FSystem {
 
 			// bloque les sliders pendant le tir
 			if (mv.inMovement) {
-				vx_slider.enabled = false;
-				vy_slider.enabled = false;
+				if(vx_slider != null)
+					vx_slider.enabled = false;
+				if(vy_slider != null)
+					vy_slider.enabled = false;
 				shoot.interactable = false; 
 			} else { 
-				vx_slider.enabled = true;
-				vy_slider.enabled = true;
+				if(vx_slider != null)
+					vx_slider.enabled = true;
+				if(vy_slider != null)
+					vy_slider.enabled = true;
 				shoot.interactable = true; 
 			}
 
@@ -168,10 +174,14 @@ public class UISystem : FSystem {
 
 	// mise a jour de l'affichage du vecteur vitesse
 	public void updateArrow() {
+		
+		Move mv = _projectile.First().GetComponent<Move> ();
+		float vx = (vx_slider != null) ? vx_slider.value : mv.vitesse_init.x;
+		float vy = (vy_slider != null) ? vy_slider.value : mv.vitesse_init.y;
 		//angle
-		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vx_slider.value/Mathf.Sqrt(Mathf.Pow(vx_slider.value,2)+Mathf.Pow(vy_slider.value,2)))*Mathf.Rad2Deg));
+		direction_vector.transform.eulerAngles = new Vector3(0,0,(Mathf.Acos(vx/Mathf.Sqrt(Mathf.Pow(vx,2)+Mathf.Pow(vy,2)))*Mathf.Rad2Deg));
 		//puissance
-		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vx_slider.value, 2) + Mathf.Pow (vy_slider.value, 2)) / 2,direction_vector.transform.localScale.y,0f);
+		direction_vector.transform.localScale = new Vector3(Mathf.Sqrt(Mathf.Pow (vx, 2) + Mathf.Pow (vy, 2)) / 2,direction_vector.transform.localScale.y,0f);
 	}
 
 

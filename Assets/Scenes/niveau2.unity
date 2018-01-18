@@ -3152,7 +3152,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure."
+  m_Text: "\"La vitesse en Vx est donn\xE9e. Calculez la vitesse en y pour d\xE9truire
+    la structure.\""
 --- !u!222 &1302061709
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -3356,7 +3356,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\"Mission : D\xE9truisez la structure.\""
+  m_Text: "\"D\xE9truisez la structure, en le moins de coups possible !\""
 --- !u!222 &1420909239
 CanvasRenderer:
   m_ObjectHideFlags: 0

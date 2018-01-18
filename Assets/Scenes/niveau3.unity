@@ -428,8 +428,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1904861872}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.225}
+  m_AnchorMax: {x: 1, y: 0.225}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1483,8 +1483,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mission : Vous devez d\xE9truire la structure.\nTip : Les pommes donnent
-    des points suppl\xE9mentaires."
+  m_Text: "La vitesse en y est donn\xE9e. Trouvez la vitesse en x pour d\xE9truire
+    la structure.\nLes pommes n'am\xE8nent que de bonnes choses !."
 --- !u!222 &875310447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3069,7 +3069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vy = 4.5 m/s
+  m_Text: Vy = 10.6 m/s
 --- !u!222 &1411794368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3308,8 +3308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earth_gravity: {x: 0, y: -9.81, z: 0}
   init_position: {x: -9, y: -3, z: 0}
-  vitesse_init: {x: 2.5, y: 4.5, z: 0}
-  vitesse: {x: 2.5, y: 4.5, z: 0}
+  vitesse_init: {x: 2.5, y: 10.6, z: 0}
+  vitesse: {x: 2.5, y: 10.6, z: 0}
   inMovement: 0
   groundContact: 0
   new_projectile: 0
@@ -4433,7 +4433,7 @@ Prefab:
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: vitesse_init.y
-      value: 4.5
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -4443,7 +4443,7 @@ Prefab:
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: vitesse.y
-      value: 4.5
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 50000010611973796, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -4721,7 +4721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938573726
 RectTransform:
   m_ObjectHideFlags: 0

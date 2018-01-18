@@ -18,6 +18,8 @@ public class NiveauxSystem : FSystem {
 	Button lvl_8 = GameObject.Find ("lvl8").GetComponent<Button> ();
 	Button lvl_9 = GameObject.Find ("lvl9").GetComponent<Button> ();
 	Button lvl_10 = GameObject.Find ("lvl10").GetComponent<Button> ();
+	Button lvl_11 = GameObject.Find ("lvl11").GetComponent<Button> ();
+	Button lvl_12 = GameObject.Find ("lvl12").GetComponent<Button> ();
 
 	Button accueil = GameObject.Find("accueil").GetComponent<Button>();
 
@@ -40,6 +42,8 @@ public class NiveauxSystem : FSystem {
 			lvl_8.onClick.AddListener (level8);
 			lvl_9.onClick.AddListener (level9);
 			lvl_10.onClick.AddListener (level10);
+			lvl_11.onClick.AddListener (level11);
+			lvl_12.onClick.AddListener (level12);
 
 			addEvent = false;
 		}
@@ -98,6 +102,16 @@ public class NiveauxSystem : FSystem {
 	private void level10(){
 
 		GameObjectManager.loadScene("niveau10");
+	}
+
+	private void level11(){
+
+		GameObjectManager.loadScene("niveau11");
+	}
+
+	private void level12(){
+
+		GameObjectManager.loadScene("niveau12");
 	}
 
 }

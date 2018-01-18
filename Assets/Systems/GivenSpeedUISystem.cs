@@ -82,7 +82,7 @@ public class GivenSpeedUISystem : FSystem {
 					placer.interactable = false;
 			} else {
 				// on ne peut pas tirer tant qu'on n'a pas rentrer une masse
-				if (masse.text != "") {
+				if (masse != null && masse.text != "") {
 					shoot.interactable = true; 
 				}
 				if (placer != null)

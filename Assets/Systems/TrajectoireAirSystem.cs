@@ -32,7 +32,8 @@ public class TrajectoireAirSystem : FSystem {
 			if (mo.inMovement == true) {
 
 				//si le projectile sort du champ de la caméra, le remettre à la position initiale
-				if (go.transform.position.x > 3f * Camera.main.orthographicSize || go.transform.position.x < -3f * Camera.main.orthographicSize) {
+				if (go.transform.position.x > 3f * Camera.main.orthographicSize || go.transform.position.x < -3f * Camera.main.orthographicSize
+					|| go.transform.position.y > 4f * Camera.main.orthographicSize) {
 					mo.inMovement = false;
 					mo.new_projectile = true;
 				}
@@ -46,6 +47,7 @@ public class TrajectoireAirSystem : FSystem {
 				float delta_x =  (mo.vitesse.x * dt) - ((Cx*S*mvAir*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f)) ;
 				float delta_y = 0f;
 				mo.vitesse.x -= (Cx * S * mvAir * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse);
+				mo.vitesse.x = (mo.vitesse.x <= 0) ? 0 : mo.vitesse.x ;
 
 				//si le projectile n'a pas touché le sol, modification de y(t) et Vy(t)
 				if (mo.groundContact == false) {
@@ -55,8 +57,8 @@ public class TrajectoireAirSystem : FSystem {
 				} 
 				else {
 					//le projectile a touché le sol -> force de frottement + plus de modification sur l'axe des y
-					delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
-					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
+					delta_x += mu * (mo.earth_gravity.y / 2f*dp.masse) * Mathf.Pow (dt, 2);
+					mo.vitesse.x += mu * mo.earth_gravity.y * dt / dp.masse;
 					go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.x*Mathf.Rad2Deg );
 					// si la vitesse est nulle, le projectile ne bouge plus, on le remet à la position initiale après une courte pause
 					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
