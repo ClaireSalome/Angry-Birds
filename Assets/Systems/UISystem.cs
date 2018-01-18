@@ -180,6 +180,8 @@ public class UISystem : FSystem {
 	// cacher le pop-up de la mission
 	public void hideMission(){
 		mission.sortingOrder = -10 ;
+		GameObject.Find ("newton").GetComponent<SpriteRenderer>().sortingOrder = -9;
+
 	}
 
 	public void home(){
