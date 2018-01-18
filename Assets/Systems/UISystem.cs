@@ -73,13 +73,16 @@ public class UISystem : FSystem {
 			if (mv.inMovement) {
 				vx_slider.enabled = false;
 				vy_slider.enabled = false;
+				shoot.interactable = false; 
 			} else { 
 				vx_slider.enabled = true;
 				vy_slider.enabled = true;
+				shoot.interactable = true; 
 			}
 
 			// on attend la selection des points par l'utilisateur 
 			if (measuring) {
+				distance.interactable = false;
 				measureDistance ();
 			}
 		}
@@ -156,6 +159,7 @@ public class UISystem : FSystem {
 
 		// si les deux points ont ete selectiones, on affiche la distance entre les deux
 		if (points.Count == 2) {
+			distance.interactable = true;
 			dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
 			res_dist.text = dist.ToString("F1")+" m";
 			measuring = false;

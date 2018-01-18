@@ -75,21 +75,25 @@ public class GivenSpeedUISystem : FSystem {
 		}
 		foreach (GameObject go in _projectile) {
 
-//			Move mv = go.GetComponent<Move> ();
-//			if (mv.inMovement) {
-//				.enabled = false;
-//				.enabled = false;
-//			} else {
-//				.enabled = true;
-//				.enabled = true;
-//			}
+			Move mv = go.GetComponent<Move> ();
+			if (mv.inMovement) {
+				shoot.interactable = false; 
+				if (placer != null)
+					placer.interactable = false;
+			} else {
+				shoot.interactable = true; 
+				if (placer != null)
+					placer.interactable = true;
+			}
 
 			// on attend la selection des points par l'utilisateur 
 			if (measuring) {
+				distance.interactable = false;
 				measureDistance ();
 			}
 
 			if (placingReward) {
+				placer.interactable = false;
 				placeReward ();
 			}
 
@@ -112,9 +116,10 @@ public class GivenSpeedUISystem : FSystem {
 
 			if (pos.x > -7) {
 				reward.transform.position = pos;
-
+				reward.transform.eulerAngles = new Vector3 (0, 0, 0);
 				placingReward = false;
 				shoot.interactable = true;
+				placer.interactable = true;
 			}
 		}
 	}
@@ -163,6 +168,7 @@ public class GivenSpeedUISystem : FSystem {
 
 		// si les deux points ont ete selectiones, on affiche la distance entre les deux
 		if (points.Count == 2) {
+			distance.interactable = true;
 			dist = Vector3.Distance (points [0].transform.position, points [1].transform.position)/2;
 			res_dist.text = dist.ToString("F1")+" m";
 			measuring = false;
