@@ -209,6 +209,7 @@ public class EasyUISystem : FSystem {
 
 	public void hideMission(){
 		mission.sortingOrder = -10 ;
+		GameObject.Find ("newton").GetComponent<SpriteRenderer>().sortingOrder = -9;
 	}
 
 	public void home(){
