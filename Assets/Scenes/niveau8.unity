@@ -2219,7 +2219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nb_destroyed_struct: 0
   level_to_load: niveau9
-  destroyed_treshold: -2.7
+  destroyed_treshold: -2.5
 --- !u!4 &802050608
 Transform:
   m_ObjectHideFlags: 0
@@ -5191,7 +5191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fire !
+  m_Text: Tirer !
 --- !u!222 &2003808609
 CanvasRenderer:
   m_ObjectHideFlags: 0
