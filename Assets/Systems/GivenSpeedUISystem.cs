@@ -133,6 +133,8 @@ public class GivenSpeedUISystem : FSystem {
 			Move mv = go.GetComponent<Move> ();
 			mv.inMovement = true;
 		}
+		DestroyedStruct destStruct = FamilyManager.getFamily (new AllOfComponents (typeof(DestroyedStruct))).First().GetComponent<DestroyedStruct>();
+		destStruct.nb_shoot += 1;
 
 	}
 	// recupere deux points selectionnes par l'utilisateur et affiche la distance entre les deux 
@@ -220,8 +222,8 @@ public class GivenSpeedUISystem : FSystem {
 	}
 
 	public void showHelp(){
-		help.sortingOrder = 9;
-		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = 9;
+		help.sortingOrder = 10;
+		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = 10;
 	}
 
 	public void hideHelp(){

@@ -9,7 +9,7 @@ public class DataProjectile : MonoBehaviour {
 
 	//rayon du projectile 
 
-	public float rayon = 0.25f;
+	public float rayon = 0.2f;
 
 
 }

@@ -574,6 +574,9 @@ MonoBehaviour:
   nb_destroyed_struct: 0
   level_to_load: niveau6
   destroyed_treshold: -2.8
+  nb_shoot: 0
+  nb_min_shoot: 1
+  ended_lvl: 0
 --- !u!4 &308957838
 Transform:
   m_ObjectHideFlags: 0
@@ -781,6 +784,11 @@ Prefab:
       propertyPath: masse
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: rayon
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
   m_IsPrefabParent: 0
@@ -899,6 +907,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013729896082, guid: 69a47439f913ee449ab1140b71f14dcb, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012350822546, guid: 69a47439f913ee449ab1140b71f14dcb,
+        type: 2}
+      propertyPath: reward
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2568,7 +2581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e346870779ffc4f49beccb27a15d9a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_total: 14
+  score_total: 0
 --- !u!4 &989065054
 Transform:
   m_ObjectHideFlags: 0
@@ -4310,7 +4323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 20
-  rayon: 0.25
+  rayon: 0.2
 --- !u!114 &1714175266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6089,6 +6102,11 @@ Prefab:
     - target: {fileID: 1000012010063778, guid: 69a47439f913ee449ab1140b71f14dcb, type: 2}
       propertyPath: m_Name
       value: apple (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012350822546, guid: 69a47439f913ee449ab1140b71f14dcb,
+        type: 2}
+      propertyPath: reward
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69a47439f913ee449ab1140b71f14dcb, type: 2}

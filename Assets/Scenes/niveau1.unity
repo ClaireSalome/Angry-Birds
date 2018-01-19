@@ -120,6 +120,9 @@ MonoBehaviour:
   nb_destroyed_struct: 0
   level_to_load: niveau2
   destroyed_treshold: -2.5
+  nb_shoot: 0
+  nb_min_shoot: 1
+  ended_lvl: 0
 --- !u!4 &8641931
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,6 +1060,11 @@ Prefab:
         type: 2}
       propertyPath: masse
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: rayon
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
@@ -3650,7 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 20
-  rayon: 0.25
+  rayon: 0.2
 --- !u!114 &1714175266
 MonoBehaviour:
   m_ObjectHideFlags: 0

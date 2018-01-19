@@ -1447,6 +1447,9 @@ MonoBehaviour:
   nb_destroyed_struct: 0
   level_to_load: niveau5
   destroyed_treshold: -2.7
+  nb_shoot: 0
+  nb_min_shoot: 1
+  ended_lvl: 0
 --- !u!4 &802050608
 Transform:
   m_ObjectHideFlags: 0
@@ -3361,7 +3364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masse: 1
-  rayon: 0.25
+  rayon: 0.2
 --- !u!114 &1495820474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4582,6 +4585,11 @@ Prefab:
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: rayon
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
   m_IsPrefabParent: 0
@@ -4921,6 +4929,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013729896082, guid: 69a47439f913ee449ab1140b71f14dcb, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012350822546, guid: 69a47439f913ee449ab1140b71f14dcb,
+        type: 2}
+      propertyPath: reward
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

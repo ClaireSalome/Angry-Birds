@@ -125,6 +125,8 @@ public class UISystem : FSystem {
 			Move mv = go.GetComponent<Move> ();
 			mv.inMovement = true;
 		}
+		DestroyedStruct destStruct = FamilyManager.getFamily (new AllOfComponents (typeof(DestroyedStruct))).First().GetComponent<DestroyedStruct>();
+		destStruct.nb_shoot += 1;
 
 	}
 
@@ -207,8 +209,8 @@ public class UISystem : FSystem {
 	}
 
 	public void showHelp(){
-		help.sortingOrder = 9;
-		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = 9;
+		help.sortingOrder = 10;
+		GameObject.Find ("help_background").GetComponent<SpriteRenderer> ().sortingOrder = 10;
 	}
 
 	public void hideHelp(){

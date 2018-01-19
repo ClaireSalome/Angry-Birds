@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/niveau_eau.unity
+- path: Assets/Scenes/menu_niveau.unity
   isLoaded: 1
   isActive: 1

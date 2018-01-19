@@ -50,25 +50,33 @@ public class TrajectoireEauSystem : FSystem {
 
 				//equations du cours
 				float delta_x =  (mo.vitesse.x * dt)  - ((Cx*S*mvEau*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f)) ;
+				Debug.Log ("delta x");
+				Debug.Log(delta_x);
+				Debug.Log ("force");
+				Debug.Log (-(Cx*S*mvEau*Mathf.Pow(mo.vitesse.x,2)*Mathf.Pow(dt,2))/(dp.masse*4f));
 				float delta_y = 0f;
 				mo.vitesse.x -= (Cx * S * mvEau * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse);
-//				if (mo.vitesse.x <= 0f) {
-//					mo.vitesse.x = 0f;
-//				}
+				Debug.Log ("vitesse x");
+				Debug.Log(mo.vitesse.x);
+				Debug.Log ("force");
+				Debug.Log (-(Cx * S * mvEau * Mathf.Pow (mo.vitesse.x, 2)*dt)/(2f*dp.masse));
+				if (mo.vitesse.x <= 0f) {
+					mo.vitesse.x = 0f;
+				}
 
 				//si le projectile n'a pas touché le sol
 				if (mo.groundContact == false) {			
 					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse) ;
-					Debug.Log ("v*t");
-					Debug.Log (mo.vitesse.y * dt);
-					Debug.Log ("gravity");
-					Debug.Log((mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2));
-					Debug.Log ("force");
-					Debug.Log(- ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse)));
-					Debug.Log ("archimede");
-					Debug.Log(-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse ));
-					Debug.Log ("v*t - gravity - force + pA");
-					Debug.Log (mo.vitesse.y * dt + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse));
+//					Debug.Log ("v*t");
+//					Debug.Log (mo.vitesse.y * dt);
+//					Debug.Log ("gravity");
+//					Debug.Log((mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2));
+//					Debug.Log ("force");
+//					Debug.Log(- ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse)));
+//					Debug.Log ("archimede");
+//					Debug.Log(-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse ));
+//					Debug.Log ("v*t - gravity - force + pA");
+//					Debug.Log (mo.vitesse.y * dt + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse));
 
 					mo.vitesse.y += mo.earth_gravity.y * dt - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse))- (mvEau*V*mo.earth_gravity.y*0.01f /dp.masse) ;
 					Debug.Log ("delta y");

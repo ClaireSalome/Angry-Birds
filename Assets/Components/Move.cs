@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Move : MonoBehaviour {
-	//composant pour récupérer les entrées du joueur concernant l'angle et la vitesse
+	//composant pour les données concernant le déplacement du projectile
 
 	// gravite
 	public Vector3 earth_gravity = new Vector3 (0,-9.81f,0);
@@ -25,6 +25,7 @@ public class Move : MonoBehaviour {
 	//pour un nouveau tir
 	public bool new_projectile = false ;
 
+	//affichage de la trajectoire pour les premiers niveaux
 	public int numOfTrajectoryPoints = 30; 
 
 	public ArrayList trajectoryPoints = new ArrayList();
