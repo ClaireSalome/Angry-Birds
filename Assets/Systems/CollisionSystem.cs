@@ -31,10 +31,10 @@ public class CollisionSystem : FSystem {
 
 				//mo.inMovement == true pour éviter modification de vitesse quand on remet un nouveau projectile
 				if (target.tag.Equals ("wood_struct") && mo.inMovement == true && !mo.idStructure.Contains(target.GetInstanceID())) {
-					Rigidbody2D dP = go.GetComponent<Rigidbody2D> ();
+					DataProjectile dP = go.GetComponent<DataProjectile> ();
 					Rigidbody2D rB = target.GetComponent<Rigidbody2D> ();
-					mo.vitesse.x  = (mo.vitesse.x*(dP.mass - rB.mass)) / (dP.mass + rB.mass);
-					mo.vitesse.y  = (mo.vitesse.y*(dP.mass - rB.mass)) / (dP.mass + rB.mass);
+					mo.vitesse.x  = (mo.vitesse.x*(dP.masse - rB.mass)) / (dP.masse + rB.mass);
+					mo.vitesse.y  = (mo.vitesse.y*(dP.masse - rB.mass)) / (dP.masse + rB.mass);
 					mo.idStructure.Add (target.GetInstanceID());
 				}
 

@@ -1299,6 +1299,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 50000013810691024, guid: b93d0474b33e4d44ba25384c86449a49,
+        type: 2}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b93d0474b33e4d44ba25384c86449a49, type: 2}
   m_IsPrefabParent: 0
@@ -3835,7 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afcf4c0a75820341827b2c0c59146f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masse: 1
+  masse: 20
   rayon: 0.25
 --- !u!114 &1495820474
 MonoBehaviour:
@@ -3882,7 +3887,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 1886500476}
   m_GameObject: {fileID: 1495820470}
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -5886,7 +5891,7 @@ Prefab:
     - target: {fileID: 50000010611973796, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
       propertyPath: m_Mass
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000010531866964, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
         type: 2}
@@ -5916,6 +5921,11 @@ Prefab:
     - target: {fileID: 1000011249962158, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
       propertyPath: m_Name
       value: Asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011261896854, guid: eca7ba30c6a76294c9b1ddea3dad8c28,
+        type: 2}
+      propertyPath: masse
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eca7ba30c6a76294c9b1ddea3dad8c28, type: 2}
