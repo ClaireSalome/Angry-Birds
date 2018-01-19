@@ -42,7 +42,6 @@ public class TrajectoireSystem : FSystem {
 				float mu = 0.5f;
 
 				//si le projectile n'a pas touché le sol
-				//TODO attention à l'usage de la masse : à revoir
 				if (mo.groundContact == false) {
 					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 					mo.vitesse.y += mo.earth_gravity.y * dt;

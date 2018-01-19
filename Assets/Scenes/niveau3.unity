@@ -1483,8 +1483,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "La vitesse en y est donn\xE9e. Trouvez la vitesse en x pour d\xE9truire
-    la structure.\nLes pommes n'am\xE8nent que de bonnes choses !."
+  m_Text: "\"La vitesse en y est donn\xE9e. Trouvez la vitesse en x pour d\xE9truire
+    la structure.\nLes pommes n'am\xE8nent que de bonnes choses !\""
 --- !u!222 &875310447
 CanvasRenderer:
   m_ObjectHideFlags: 0
