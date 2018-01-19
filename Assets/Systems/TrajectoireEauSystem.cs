@@ -28,12 +28,14 @@ public class TrajectoireEauSystem : FSystem {
 			DataProjectile dp = go.GetComponent<DataProjectile> ();
 			Rigidbody2D rb = go.GetComponent<Rigidbody2D> ();
 
-			float dt = Time.deltaTime;
-
+//			float dt = Time.deltaTime;
+			float dt = 0.01f;
+				
 			if (mo.inMovement == true) {
 
 				//si le projectile sort du champ de la caméra
-				if (go.transform.position.x > 3f * Camera.main.orthographicSize) {
+				if (go.transform.position.x > 3f * Camera.main.orthographicSize  || go.transform.position.x < -3f * Camera.main.orthographicSize
+					|| go.transform.position.y > 4f * Camera.main.orthographicSize || go.transform.position.y < -3f * Camera.main.orthographicSize) {
 					mo.inMovement = false;
 					mo.new_projectile = true;
 				}
@@ -55,18 +57,22 @@ public class TrajectoireEauSystem : FSystem {
 //				}
 
 				//si le projectile n'a pas touché le sol
-				if (mo.groundContact == false) {
-//					Probleme avec ça
-//					
-					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)/2f*dp.masse) * Mathf.Pow(0.01f,2) ;
+				if (mo.groundContact == false) {			
+					delta_y = (mo.vitesse.y * dt) + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse) ;
+					Debug.Log ("v*t");
+					Debug.Log (mo.vitesse.y * dt);
+					Debug.Log ("gravity");
+					Debug.Log((mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2));
 					Debug.Log ("force");
-					Debug.Log((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse));
-					Debug.Log((mvEau*V*mo.earth_gravity.y*dt /dp.masse));
-//					
-//					
+					Debug.Log(- ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse)));
+					Debug.Log ("archimede");
+					Debug.Log(-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse ));
+					Debug.Log ("v*t - gravity - force + pA");
+					Debug.Log (mo.vitesse.y * dt + (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2) - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) * Mathf.Pow(dt,2))/(4f*dp.masse))-((mvEau*V*mo.earth_gravity.y)* Mathf.Pow(0.01f,2)/2f*dp.masse));
+
 					mo.vitesse.y += mo.earth_gravity.y * dt - ((Cx * S * mvEau * Mathf.Pow (mo.vitesse.y, 2) *dt )/(2f*dp.masse))- (mvEau*V*mo.earth_gravity.y*0.01f /dp.masse) ;
-					Debug.Log ("vitesse");
-					Debug.Log(mo.vitesse.y);
+					Debug.Log ("delta y");
+					Debug.Log(delta_y);
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.y*Mathf.Rad2Deg );
 				} 
 				else {
@@ -74,13 +80,15 @@ public class TrajectoireEauSystem : FSystem {
 					delta_x += mu * (mo.earth_gravity.y / 2f) * Mathf.Pow (dt, 2);
 					mo.vitesse.x += mu * mo.earth_gravity.y * dt;
 					//go.transform.eulerAngles = new Vector3 (0, 0, mo.vitesse.x*Mathf.Rad2Deg );
+
+					// si la vitesse est nulle, le projectile ne bouge plus
+					if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
+						mo.inMovement = false;
+						//faire une pause pour l'affichage
+						go.AddComponent<WaitEau>();
 					}
-				// si la vitesse est nulle, le projectile ne bouge plus
-				if (mo.vitesse.x <= 0f && mo.vitesse.y <= 0f) {
-					mo.inMovement = false;
-					//faire une pause pour l'affichage
-					go.AddComponent<WaitEau>();
 				}
+
 
 				go.transform.position += new Vector3 (delta_x, delta_y, 0f);
 
