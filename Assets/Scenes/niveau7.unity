@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nb_destroyed_struct: 0
   level_to_load: niveau8
-  destroyed_treshold: -1.8
+  destroyed_treshold: -1.4
   nb_shoot: 0
   nb_min_shoot: 3
   ended_lvl: 0
